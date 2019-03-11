@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2722368DBC00D3CC05 /* AppDelegate.swift */; };
-		8842ED2A22368DBC00D3CC05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2922368DBC00D3CC05 /* ViewController.swift */; };
+		8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */; };
 		8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED2B22368DBC00D3CC05 /* Main.storyboard */; };
-		8842ED2F22368DBC00D3CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED2E22368DBC00D3CC05 /* Assets.xcassets */; };
 		8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */; };
+		8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */; };
+		8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */; };
+		8842ED3F223696B800D3CC05 /* BussinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3E223696B800D3CC05 /* BussinessCard.swift */; };
+		8842ED41223696C800D3CC05 /* BusinessCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED40223696C800D3CC05 /* BusinessCardData.swift */; };
+		8842ED432236980800D3CC05 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED422236980800D3CC05 /* art.scnassets */; };
+		8842ED452236983400D3CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED442236983400D3CC05 /* Assets.xcassets */; };
+		8842ED4722369B2200D3CC05 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED4622369B2200D3CC05 /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8842ED2422368DBC00D3CC05 /* Bussines Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bussines Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842ED2722368DBC00D3CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8842ED2922368DBC00D3CC05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
 		8842ED2C22368DBC00D3CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8842ED2E22368DBC00D3CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8842ED3122368DBC00D3CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8842ED3322368DBC00D3CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+Interactor.swift"; sourceTree = "<group>"; };
+		8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+delegate.swift"; sourceTree = "<group>"; };
+		8842ED3E223696B800D3CC05 /* BussinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BussinessCard.swift; sourceTree = "<group>"; };
+		8842ED40223696C800D3CC05 /* BusinessCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardData.swift; sourceTree = "<group>"; };
+		8842ED422236980800D3CC05 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		8842ED442236983400D3CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8842ED4622369B2200D3CC05 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +67,27 @@
 			isa = PBXGroup;
 			children = (
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
-				8842ED2922368DBC00D3CC05 /* ViewController.swift */,
+				8842ED3D223696A400D3CC05 /* BussinesCard */,
+				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
+				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
+				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
 				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
-				8842ED2E22368DBC00D3CC05 /* Assets.xcassets */,
+				8842ED442236983400D3CC05 /* Assets.xcassets */,
+				8842ED422236980800D3CC05 /* art.scnassets */,
+				8842ED4622369B2200D3CC05 /* Fonts */,
 				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
 				8842ED3322368DBC00D3CC05 /* Info.plist */,
 			);
 			path = "Bussines Card";
+			sourceTree = "<group>";
+		};
+		8842ED3D223696A400D3CC05 /* BussinesCard */ = {
+			isa = PBXGroup;
+			children = (
+				8842ED3E223696B800D3CC05 /* BussinessCard.swift */,
+				8842ED40223696C800D3CC05 /* BusinessCardData.swift */,
+			);
+			path = BussinesCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,8 +148,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8842ED4722369B2200D3CC05 /* Fonts in Resources */,
 				8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */,
-				8842ED2F22368DBC00D3CC05 /* Assets.xcassets in Resources */,
+				8842ED432236980800D3CC05 /* art.scnassets in Resources */,
+				8842ED452236983400D3CC05 /* Assets.xcassets in Resources */,
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,7 +163,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8842ED2A22368DBC00D3CC05 /* ViewController.swift in Sources */,
+				8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */,
+				8842ED41223696C800D3CC05 /* BusinessCardData.swift in Sources */,
+				8842ED3F223696B800D3CC05 /* BussinessCard.swift in Sources */,
+				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
+				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
