@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880048052239240500E12E01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880048042239240500E12E01 /* Extensions.swift */; };
 		8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2722368DBC00D3CC05 /* AppDelegate.swift */; };
 		8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */; };
 		8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED2B22368DBC00D3CC05 /* Main.storyboard */; };
@@ -18,9 +19,11 @@
 		8842ED432236980800D3CC05 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED422236980800D3CC05 /* art.scnassets */; };
 		8842ED452236983400D3CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED442236983400D3CC05 /* Assets.xcassets */; };
 		8842ED4722369B2200D3CC05 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED4622369B2200D3CC05 /* Fonts */; };
+		88B795A42237C1690048873B /* BusinessCard.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 88B795A32237C1680048873B /* BusinessCard.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		880048042239240500E12E01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8842ED2422368DBC00D3CC05 /* Bussines Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bussines Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842ED2722368DBC00D3CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		8842ED422236980800D3CC05 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8842ED442236983400D3CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8842ED4622369B2200D3CC05 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		88B795A32237C1680048873B /* BusinessCard.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BusinessCard.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +75,10 @@
 				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
 				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
 				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
+				880048042239240500E12E01 /* Extensions.swift */,
 				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
 				8842ED442236983400D3CC05 /* Assets.xcassets */,
+				88B795A32237C1680048873B /* BusinessCard.mp4 */,
 				8842ED422236980800D3CC05 /* art.scnassets */,
 				8842ED4622369B2200D3CC05 /* Fonts */,
 				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
@@ -151,6 +157,7 @@
 				8842ED4722369B2200D3CC05 /* Fonts in Resources */,
 				8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */,
 				8842ED432236980800D3CC05 /* art.scnassets in Resources */,
+				88B795A42237C1690048873B /* BusinessCard.mp4 in Resources */,
 				8842ED452236983400D3CC05 /* Assets.xcassets in Resources */,
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
 			);
@@ -169,6 +176,7 @@
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,
+				880048052239240500E12E01 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

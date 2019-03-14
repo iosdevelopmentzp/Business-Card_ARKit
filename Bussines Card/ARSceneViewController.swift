@@ -19,10 +19,42 @@ class ARSceneViewController: UIViewController {
     var targetAnchor: ARImageAnchor?
     
     var businessCardPlaced = false
-    var businessCard: BusinessCard!
-    var socialLinkData: SocialLinkData?
     
     var menuShown = false
+    
+    var webView: UIWebView = {
+        let request = URLRequest(url: URL(string: "https://www.zolotoyvek.ua/ru/")!)
+        let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 400, height: 672))
+        webView.loadRequest(request)
+        return webView
+    }()
+    
+    
+    var hideButtonNode: SCNNode?
+    var infoButtonNode: SCNNode?
+    var cardOcclusionNode: SCNNode?
+    var textNode: SCNNode?
+    var videoNode: SCNNode?
+    var mainNode: SCNNode?
+    var widthCard: CGFloat?
+    var heightCard: CGFloat?
+    var webViewNode: SCNNode?
+    var webIsHide: Bool = true{
+        didSet {
+            if webIsHide {
+                 hideWebInfo()
+            } else {
+               showWebInfo()
+            }
+        }
+    }
+    
+    // CONSTANTS
+    static let buttonInfoName = "BUTTON INFO"
+    static let buttonInfoHide = "BUTTON INFO HIDE"
+    static let heightNameLabelCoephysient: CGFloat = 0.4
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +62,15 @@ class ARSceneViewController: UIViewController {
         augmentedRealityView.debugOptions = [.showFeaturePoints, .showWorldOrigin]
         augmentedRealityView.session.run(configuration)
         augmentedRealityView.automaticallyUpdatesLighting = true
-        
-         setupBusinessCard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if !menuShown { setupARSession() }
-        socialLinkData = nil
     }
     
-    fileprivate func setupARSession() {
+    func setupARSession() {
         
         //1. Setup Our Tracking Images
         guard let trackingImages =  ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
@@ -55,32 +84,5 @@ class ARSceneViewController: UIViewController {
         augmentedRealitySession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
     }
-    
-    /// Create A Business Card
-    func setupBusinessCard(){
-        
-        //1. Create Our Business Card
-        let businessCardData = BusinessCardData(firstName: "Josh",
-                                                surname: "Robbins",
-                                                position: "Software Engineer",
-                                                company: "BlackMirrorz",
-                                                address: BusinessAddress(street: "1 Infinite Loop",
-                                                                         city: "Cupertino", state: "CA", postalCode: "95015",
-                                                                         coordinates: (latittude: 37.3349, longtitude: -122.0090201)),
-                                                website: SocialLinkData(link: "https://www.blackmirrorz.tech", type: .Website),
-                                                phoneNumber: "+821049550384",
-                                                email: "josh.robbins@blackmirroz.tech",
-                                                stackOverflowAccount: SocialLinkData(link: "https://stackoverflow.com/users/8816868/josh-robbins", type: .StackOverFlow),
-                                                githubAccount: SocialLinkData(link: "https://github.com/BlackMirrorz", type: .GitHub))
-        
-        //2. Assign It To The Business Card Node
-        businessCard = BusinessCard(data: businessCardData, cardType: .noProfileImage)
-        
-    }
-    
-    
-    
-
-
 }
 
