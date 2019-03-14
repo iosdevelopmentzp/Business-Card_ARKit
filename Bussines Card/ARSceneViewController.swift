@@ -29,7 +29,6 @@ class ARSceneViewController: UIViewController {
         return webView
     }()
     
-    
     var hideButtonNode: SCNNode?
     var infoButtonNode: SCNNode?
     var cardOcclusionNode: SCNNode?
@@ -54,14 +53,17 @@ class ARSceneViewController: UIViewController {
     static let buttonInfoHide = "BUTTON INFO HIDE"
     static let heightNameLabelCoephysient: CGFloat = 0.4
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         augmentedRealityView.debugOptions = [.showFeaturePoints, .showWorldOrigin]
         augmentedRealityView.session.run(configuration)
         augmentedRealityView.automaticallyUpdatesLighting = true
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     override func viewWillAppear(_ animated: Bool) {

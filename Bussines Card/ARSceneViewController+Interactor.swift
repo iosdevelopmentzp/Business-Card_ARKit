@@ -32,16 +32,11 @@ extension ARSceneViewController {
         default: ()
         }
     }
-    
-    
-    
+ 
     //-----------------------
     //MARK: - AnimateMethods
     //-----------------------
-    
-    
-    
-    
+
     func animateCard (node: SCNNode?, anchor: ARAnchor?) {
         //1. Check We Have A Valid Image Anchor
         
@@ -58,10 +53,7 @@ extension ARSceneViewController {
         let heightImage = referenceImage.physicalSize.height
         self.widthCard = widthImage
         self.heightCard = heightImage
-        
-        
-        
-        
+
         // create cardOcclusionNode
         let cardOcclusionNode = createCardOcclusionNode(width: widthImage, height: heightImage)
         self.cardOcclusionNode = cardOcclusionNode
@@ -86,9 +78,7 @@ extension ARSceneViewController {
         textNode.runAction(opacityAnimation)
         self.textNode = textNode
         node.addChildNode(textNode)
-        
-        
-        
+
         // ADD AVATAR IMAGE
         let widthAvatar =  heightImage * ARSceneViewController.heightNameLabelCoephysient
         let avatarImageNode = SCNNode(geometry: SCNPlane(width: widthAvatar, height: widthAvatar))
@@ -108,8 +98,6 @@ extension ARSceneViewController {
                                                 node.position.y,
                                                 avatarImageNode.position.z)
         let moveActionAvatar = SCNAction.move(to: finishVectorAvatar, duration: 1.0)
-        
-        
 
         // ADD BUTTON INFO
         
@@ -146,8 +134,6 @@ extension ARSceneViewController {
         
     }
     
-   
-    
     func infoButtonHide( _ isHide: Bool) {
         let duration = 0.5
         if isHide {
@@ -159,8 +145,6 @@ extension ARSceneViewController {
         }
         
     }
-    
-    
     
     func showWebInfo () {
         
@@ -205,14 +189,11 @@ extension ARSceneViewController {
             textNode.runAction(.move(to: pointForShowText, duration: 1.0))
             textNode.runAction(.fadeOpacity(to: 1, duration: 1.0))
         }
-        
-        
+
         // HIDE WEB
         if let rootNode = self.mainNode {
             self.hideWebView(on: rootNode, yOffset: (self.heightCard ?? 0) * 0.1)
         }
-        
-        
     }
     
     func schowWebView(on rootNode: SCNNode, yOffset: CGFloat) {
@@ -229,9 +210,7 @@ extension ARSceneViewController {
             guard let occurencNode = self?.createCardOcclusionNode(width: widthCard, height: heightCard * 2) else { return }
             occurencNode.position.z -= heightCard.float() / 2
             rootNode.addChildNode(occurencNode)
-            
-            
-            
+
             var webViewNode: SCNNode
             
             if let webNode = self?.webViewNode {
