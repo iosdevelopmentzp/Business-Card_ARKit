@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		880048052239240500E12E01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880048042239240500E12E01 /* Extensions.swift */; };
+		882E712B223A691B003F12EC /* ChoiceEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E712A223A691B003F12EC /* ChoiceEmployeeViewController.swift */; };
+		882E712D223A695D003F12EC /* ChoiceEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882E712C223A695D003F12EC /* ChoiceEmployee.storyboard */; };
+		882E7130223A6B94003F12EC /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E712F223A6B94003F12EC /* EmployeeCollectionViewCell.swift */; };
+		882E7132223A6BEC003F12EC /* EmployeeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882E7131223A6BEC003F12EC /* EmployeeCollectionViewCell.xib */; };
+		882E7134223A756B003F12EC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E7133223A756B003F12EC /* Employee.swift */; };
+		882E7137223A7AA4003F12EC /* ChoiceEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E7136223A7AA4003F12EC /* ChoiceEmployeeController.swift */; };
 		8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2722368DBC00D3CC05 /* AppDelegate.swift */; };
 		8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */; };
 		8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED2B22368DBC00D3CC05 /* Main.storyboard */; };
@@ -19,6 +25,12 @@
 
 /* Begin PBXFileReference section */
 		880048042239240500E12E01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		882E712A223A691B003F12EC /* ChoiceEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEmployeeViewController.swift; sourceTree = "<group>"; };
+		882E712C223A695D003F12EC /* ChoiceEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoiceEmployee.storyboard; sourceTree = "<group>"; };
+		882E712F223A6B94003F12EC /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		882E7131223A6BEC003F12EC /* EmployeeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeCollectionViewCell.xib; sourceTree = "<group>"; };
+		882E7133223A756B003F12EC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		882E7136223A7AA4003F12EC /* ChoiceEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEmployeeController.swift; sourceTree = "<group>"; };
 		8842ED2422368DBC00D3CC05 /* Bussines Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bussines Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842ED2722368DBC00D3CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +53,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				882E712A223A691B003F12EC /* ChoiceEmployeeViewController.swift */,
+				882E7136223A7AA4003F12EC /* ChoiceEmployeeController.swift */,
+				882E712C223A695D003F12EC /* ChoiceEmployee.storyboard */,
+				882E712E223A6A12003F12EC /* Views */,
+			);
+			path = ChoiceEmployeeViewController;
+			sourceTree = "<group>";
+		};
+		882E712E223A6A12003F12EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				882E712F223A6B94003F12EC /* EmployeeCollectionViewCell.swift */,
+				882E7131223A6BEC003F12EC /* EmployeeCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		882E7135223A7570003F12EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				882E7133223A756B003F12EC /* Employee.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8842ED1B22368DBC00D3CC05 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +100,8 @@
 		8842ED2622368DBC00D3CC05 /* Bussines Card */ = {
 			isa = PBXGroup;
 			children = (
+				882E7135223A7570003F12EC /* Model */,
+				882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */,
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
 				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
 				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
@@ -133,7 +175,9 @@
 			files = (
 				8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */,
 				8842ED452236983400D3CC05 /* Assets.xcassets in Resources */,
+				882E7132223A6BEC003F12EC /* EmployeeCollectionViewCell.xib in Resources */,
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
+				882E712D223A695D003F12EC /* ChoiceEmployee.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,10 +189,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */,
+				882E7134223A756B003F12EC /* Employee.swift in Sources */,
+				882E7137223A7AA4003F12EC /* ChoiceEmployeeController.swift in Sources */,
+				882E712B223A691B003F12EC /* ChoiceEmployeeViewController.swift in Sources */,
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,
 				880048052239240500E12E01 /* Extensions.swift in Sources */,
+				882E7130223A6B94003F12EC /* EmployeeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
