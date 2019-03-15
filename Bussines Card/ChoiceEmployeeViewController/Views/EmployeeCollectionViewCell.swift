@@ -17,7 +17,7 @@ protocol EmployeeCellModel {
 class EmployeeCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet fileprivate weak var avatarImageView: UIImageView!
-    @IBOutlet fileprivate weak var nameLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var checkMarkImage: UIImageView!
     @IBOutlet fileprivate weak var content: UIView!
     

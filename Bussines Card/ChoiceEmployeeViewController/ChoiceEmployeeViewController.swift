@@ -19,6 +19,7 @@ class ChoiceEmployeeViewController: UIViewController {
 
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     @IBOutlet fileprivate weak var collectionLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var scanButton: UIButton!
     
     lazy var controller: ChoiceEmployeeControllerProtocol = {
         return ChoiceEmployeeController(viewController: self)
@@ -37,12 +38,33 @@ class ChoiceEmployeeViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
+    
     fileprivate func setupUI () {
 
         // collection view
         let nib = UINib(nibName: cellIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
+        
+        collectionLayout.minimumLineSpacing = 10
+        collectionLayout.minimumInteritemSpacing = 10
+        collectionLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
+        scanButton.layer.cornerRadius = 10.0
+        scanButton.layer.borderWidth = 3.0
+        scanButton.layer.borderColor = UIColor.init(red: 0, green: 220, blue: 0, alpha: 1).cgColor
     }
+    
+    // U S E R  I N T E R A C T I O N
+    // MARK: - User Interaction
+    
+    @IBAction func scanAction(_ sender: UIButton) {
+    }
+    
+ 
     
 
 }
@@ -75,6 +97,7 @@ extension ChoiceEmployeeViewController: UICollectionViewDelegate {
         
         if let item = collectionView.cellForItem(at: indexPath) as? EmployeeCollectionViewCell {
             item.checkMark = true
+            title = item.nameLabel.text
         }
         
         collectionView.performBatchUpdates(nil, completion: nil)
@@ -84,22 +107,16 @@ extension ChoiceEmployeeViewController: UICollectionViewDelegate {
 extension ChoiceEmployeeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.width - 20
+        let width = UIScreen.main.bounds.width - 40
         
         
         switch collectionView.indexPathsForSelectedItems?.first {
         case .some(indexPath):
             return CGSize(width: width/2 + 10, height: width/2 + 10)
         default:
-    
             return CGSize(width: width/2, height: width/2)
         }
     }
     
     
 }
-
-
-
-
-

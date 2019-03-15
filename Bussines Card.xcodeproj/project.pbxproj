@@ -21,6 +21,8 @@
 		8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */; };
 		8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */; };
 		8842ED452236983400D3CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED442236983400D3CC05 /* Assets.xcassets */; };
+		8896C879223BAEDF007DEA0D /* CardScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C878223BAEDF007DEA0D /* CardScanViewController.swift */; };
+		8896C87B223BAF26007DEA0D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8896C87A223BAF26007DEA0D /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+Interactor.swift"; sourceTree = "<group>"; };
 		8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+delegate.swift"; sourceTree = "<group>"; };
 		8842ED442236983400D3CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8896C878223BAEDF007DEA0D /* CardScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanViewController.swift; sourceTree = "<group>"; };
+		8896C87A223BAF26007DEA0D /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		8842ED2622368DBC00D3CC05 /* Bussines Card */ = {
 			isa = PBXGroup;
 			children = (
+				8896C877223BAEAB007DEA0D /* CardScanViewController */,
 				882E7135223A7570003F12EC /* Model */,
 				882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */,
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
@@ -113,6 +118,15 @@
 				8842ED3322368DBC00D3CC05 /* Info.plist */,
 			);
 			path = "Bussines Card";
+			sourceTree = "<group>";
+		};
+		8896C877223BAEAB007DEA0D /* CardScanViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8896C878223BAEDF007DEA0D /* CardScanViewController.swift */,
+				8896C87A223BAF26007DEA0D /* Storyboard.storyboard */,
+			);
+			path = CardScanViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +192,7 @@
 				882E7132223A6BEC003F12EC /* EmployeeCollectionViewCell.xib in Resources */,
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
 				882E712D223A695D003F12EC /* ChoiceEmployee.storyboard in Resources */,
+				8896C87B223BAF26007DEA0D /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +206,7 @@
 				8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */,
 				882E7134223A756B003F12EC /* Employee.swift in Sources */,
 				882E7137223A7AA4003F12EC /* ChoiceEmployeeController.swift in Sources */,
+				8896C879223BAEDF007DEA0D /* CardScanViewController.swift in Sources */,
 				882E712B223A691B003F12EC /* ChoiceEmployeeViewController.swift in Sources */,
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
