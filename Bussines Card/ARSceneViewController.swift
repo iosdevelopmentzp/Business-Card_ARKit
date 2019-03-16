@@ -16,6 +16,10 @@ class ARSceneViewController: UIViewController {
     
     let augmentedRealitySession = ARSession()
     let configuration = ARImageTrackingConfiguration()
+   
+    
+    
+    
     var targetAnchor: ARImageAnchor?
     
     var businessCardPlaced = false
@@ -83,8 +87,7 @@ class ARSceneViewController: UIViewController {
         augmentedRealityView.session = augmentedRealitySession
         augmentedRealitySession.delegate = self
         augmentedRealityView.delegate = self
-        augmentedRealitySession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-        
+        augmentedRealitySession.run(configuration, options: [.resetTracking, .removeExistingAnchors]) 
     }
 }
 

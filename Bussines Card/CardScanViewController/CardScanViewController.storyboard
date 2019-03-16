@@ -13,7 +13,7 @@
         <!--Card Scan View Controller-->
         <scene sceneID="jbC-4o-F67">
             <objects>
-                <viewController id="9pJ-bx-Yme" customClass="CardScanViewController" customModule="Bussines_Card" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardScanViewController" id="9pJ-bx-Yme" customClass="CardScanViewController" customModule="Bussines_Card" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="stk-aF-2gv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

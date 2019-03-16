@@ -37,6 +37,12 @@ class EmployeeCollectionViewCell: UICollectionViewCell {
         UIConfigure()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        content.layer.cornerRadius = 4.0
+//        content.layer.masksToBounds = true
+    }
+    
     fileprivate func UIConfigure() {
         content.layer.cornerRadius = 4.0
         content.layer.masksToBounds = true

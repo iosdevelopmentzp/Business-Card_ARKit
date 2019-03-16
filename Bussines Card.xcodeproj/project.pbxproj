@@ -22,7 +22,11 @@
 		8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */; };
 		8842ED452236983400D3CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED442236983400D3CC05 /* Assets.xcassets */; };
 		8896C879223BAEDF007DEA0D /* CardScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C878223BAEDF007DEA0D /* CardScanViewController.swift */; };
-		8896C87B223BAF26007DEA0D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8896C87A223BAF26007DEA0D /* Storyboard.storyboard */; };
+		8896C87B223BAF26007DEA0D /* CardScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8896C87A223BAF26007DEA0D /* CardScanViewController.storyboard */; };
+		8896C87D223BB5A1007DEA0D /* CardScanArKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C87C223BB5A1007DEA0D /* CardScanArKitController.swift */; };
+		8896C87F223BB6D8007DEA0D /* CardScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C87E223BB6D8007DEA0D /* CardScanController.swift */; };
+		88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E5AED0223BEB4C00AE9F70 /* scn.scnassets */; };
+		88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +47,11 @@
 		8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+delegate.swift"; sourceTree = "<group>"; };
 		8842ED442236983400D3CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8896C878223BAEDF007DEA0D /* CardScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanViewController.swift; sourceTree = "<group>"; };
-		8896C87A223BAF26007DEA0D /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		8896C87A223BAF26007DEA0D /* CardScanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardScanViewController.storyboard; sourceTree = "<group>"; };
+		8896C87C223BB5A1007DEA0D /* CardScanArKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanArKitController.swift; sourceTree = "<group>"; };
+		8896C87E223BB6D8007DEA0D /* CardScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanController.swift; sourceTree = "<group>"; };
+		88E5AED0223BEB4C00AE9F70 /* scn.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = scn.scnassets; sourceTree = "<group>"; };
+		88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +112,10 @@
 		8842ED2622368DBC00D3CC05 /* Bussines Card */ = {
 			isa = PBXGroup;
 			children = (
-				8896C877223BAEAB007DEA0D /* CardScanViewController */,
+				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
 				882E7135223A7570003F12EC /* Model */,
 				882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */,
+				8896C877223BAEAB007DEA0D /* CardScanViewController */,
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
 				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
 				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
@@ -116,6 +125,7 @@
 				8842ED442236983400D3CC05 /* Assets.xcassets */,
 				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
 				8842ED3322368DBC00D3CC05 /* Info.plist */,
+				88E5AED0223BEB4C00AE9F70 /* scn.scnassets */,
 			);
 			path = "Bussines Card";
 			sourceTree = "<group>";
@@ -124,9 +134,19 @@
 			isa = PBXGroup;
 			children = (
 				8896C878223BAEDF007DEA0D /* CardScanViewController.swift */,
-				8896C87A223BAF26007DEA0D /* Storyboard.storyboard */,
+				8896C87E223BB6D8007DEA0D /* CardScanController.swift */,
+				8896C87C223BB5A1007DEA0D /* CardScanArKitController.swift */,
+				8896C87A223BAF26007DEA0D /* CardScanViewController.storyboard */,
 			);
 			path = CardScanViewController;
+			sourceTree = "<group>";
+		};
+		88E5AED2223BEF6600AE9F70 /* ArKit Models */ = {
+			isa = PBXGroup;
+			children = (
+				88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */,
+			);
+			path = "ArKit Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +212,8 @@
 				882E7132223A6BEC003F12EC /* EmployeeCollectionViewCell.xib in Resources */,
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
 				882E712D223A695D003F12EC /* ChoiceEmployee.storyboard in Resources */,
-				8896C87B223BAF26007DEA0D /* Storyboard.storyboard in Resources */,
+				88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */,
+				8896C87B223BAF26007DEA0D /* CardScanViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +228,10 @@
 				882E7134223A756B003F12EC /* Employee.swift in Sources */,
 				882E7137223A7AA4003F12EC /* ChoiceEmployeeController.swift in Sources */,
 				8896C879223BAEDF007DEA0D /* CardScanViewController.swift in Sources */,
+				8896C87D223BB5A1007DEA0D /* CardScanArKitController.swift in Sources */,
 				882E712B223A691B003F12EC /* ChoiceEmployeeViewController.swift in Sources */,
+				8896C87F223BB6D8007DEA0D /* CardScanController.swift in Sources */,
+				88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */,
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,

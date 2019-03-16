@@ -12,6 +12,7 @@ protocol ChoiceEmployeeControllerProtocol: NSObjectProtocol {
     var count: Int {get}
     var viewController: UIViewController? {get}
     
+    func employee(indexPath: IndexPath) -> Employee?
     func dataForIndexPath(indexPath: IndexPath) -> EmployeeCellModel
 }
 
@@ -19,11 +20,18 @@ class ChoiceEmployeeViewController: UIViewController {
 
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     @IBOutlet fileprivate weak var collectionLayout: UICollectionViewFlowLayout!
-    @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet fileprivate weak var scanButton: UIButton!
     
-    lazy var controller: ChoiceEmployeeControllerProtocol = {
+    fileprivate lazy var controller: ChoiceEmployeeControllerProtocol = {
         return ChoiceEmployeeController(viewController: self)
     }()
+    
+    fileprivate var selectedIndexPath: IndexPath = IndexPath.init(row: 0, section: 0) {
+        didSet {
+            collectionView.performBatchUpdates(nil, completion: nil)
+        }
+    }
+    
     
     // C O N S T A N T S
     //MARK: - Constans
@@ -62,13 +70,18 @@ class ChoiceEmployeeViewController: UIViewController {
     // MARK: - User Interaction
     
     @IBAction func scanAction(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: String(describing: CardScanViewController.self) , bundle: nil)
+        let scanVC = storyboard.instantiateViewController(withIdentifier: String(describing: CardScanViewController.self)) as!  CardScanViewController
+       
+        guard let employee = controller.employee(indexPath: selectedIndexPath) else { return }
+        
+        let scanController = CardScanController(employee: employee)
+        scanVC.scanController = scanController
+        
+        navigationController?.pushViewController(scanVC, animated: true)
     }
-    
- 
-    
-
 }
-
 
 // U I C O L L E C T I O N  V I E W  D A T A  S O U R C E
 // Mark: - UICollectionViewDataSource
@@ -81,7 +94,7 @@ extension ChoiceEmployeeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! EmployeeCollectionViewCell
         cell.configure(model: controller.dataForIndexPath(indexPath: indexPath))
-        cell.checkMark = false
+        cell.checkMark = indexPath == selectedIndexPath
         return cell
     }
     
@@ -93,14 +106,14 @@ extension ChoiceEmployeeViewController: UICollectionViewDataSource {
 extension ChoiceEmployeeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        selectedIndexPath = indexPath
+        
         collectionView.visibleCells.forEach{ ($0 as? EmployeeCollectionViewCell)?.checkMark = false }
         
         if let item = collectionView.cellForItem(at: indexPath) as? EmployeeCollectionViewCell {
             item.checkMark = true
             title = item.nameLabel.text
         }
-        
-        collectionView.performBatchUpdates(nil, completion: nil)
     }
 }
 

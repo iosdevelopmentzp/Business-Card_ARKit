@@ -9,6 +9,7 @@
 import UIKit
 
 
+
 struct Employee: PersonProtocol, EmployeeProtocol {
     var avatar: UIImage?
     var name: String

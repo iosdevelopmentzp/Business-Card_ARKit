@@ -34,6 +34,15 @@ class ChoiceEmployeeController: NSObject, ChoiceEmployeeControllerProtocol {
         return items[indexPath.row].cellData()
     }
     
+    func employee(indexPath: IndexPath) -> Employee? {
+        if indexPath.row < items.count {
+            return items[indexPath.row]
+        } else {
+            return nil
+        }
+    }
+    
+    
     
     // P R I V A T E   M E T H O D S
     // MARK: - Private Methods
