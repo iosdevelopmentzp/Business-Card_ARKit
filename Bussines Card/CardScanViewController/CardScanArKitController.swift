@@ -38,6 +38,7 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     fileprivate let session = ARSession()
     fileprivate let configuration = ARImageTrackingConfiguration()
     fileprivate let updateQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier!).serialSCNQueue")
+    fileprivate var bussinesCard: BusinessCard?
     
     fileprivate var targetAnchor: ARImageAnchor?
     fileprivate var businessCardPlaced = false
@@ -50,6 +51,10 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         self.sceneView = sceneView
         super.init()
         sceneView.delegate = self
+    }
+    
+    deinit {
+        bussinesCard?.flushFromMemory()
     }
     
     // I N T E R N A L   M E T H O D S
@@ -69,6 +74,12 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         session.delegate = self
         sceneView.delegate = self
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        
+        updateQueue.async { [weak self] in
+            if let employee = self?.cardScanController?.employee {
+                self?.bussinesCard = BusinessCard(employee: employee)
+            }
+        }
     }
     
     func pauseSession() {
@@ -111,10 +122,7 @@ extension CardScanArKitController: ARSCNViewDelegate {
             
             imageHightingAnimationNode.runAction(self.imageHighlightAction) { [weak self] in
                 
-                guard let cardScanController = self?.cardScanController else { return }
-                
-                let businessCard = BusinessCard(employee: cardScanController.employee)
-                
+                guard let businessCard = self?.bussinesCard else { return }
                 node.addChildNode(businessCard)
             }
         }

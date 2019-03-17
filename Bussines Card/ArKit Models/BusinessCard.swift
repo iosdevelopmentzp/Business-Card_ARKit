@@ -32,7 +32,7 @@ class BusinessCard: SCNNode {
             else { fatalError("Error Getting Business Card Node Data") }
         
         avatar.geometry?.materials.first?.diffuse.contents = employee.avatar
-        target.physicsBody.
+        target.geometry?.firstMaterial?.colorBufferWriteMask = .alpha
         
         self.addChildNode(cardRoot)
         self.eulerAngles.x = -.pi / 2
@@ -40,13 +40,13 @@ class BusinessCard: SCNNode {
     
     required init?(coder aDecoder: NSCoder) { fatalError("Business Card Coder Not Implemented") }
     
-    deinit { flushFromMemory() }
+    deinit {
+//        flushFromMemory()
+    }
     
     /// Removes All SCNMaterials & Geometries From An SCNNode
     func flushFromMemory(){
-        
-        
-        
+
         debugPrint("Cleaning Business Card")
         
         if let parentNodes = self.parent?.childNodes{ parentNodes.forEach {
