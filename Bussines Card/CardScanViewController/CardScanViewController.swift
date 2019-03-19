@@ -37,11 +37,22 @@ class CardScanViewController: UIViewController {
         super.viewWillAppear(animated)
         
         scanController?.startScan()
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         
         scanController?.pauseScan()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard let currentTouchLocation = touches.first?.location(in: self.sceneView),
+            let hitTestResult = self.sceneView.hitTest(currentTouchLocation, options: nil).first?.node.name
+            else { return }
+        
+        arKitScanController.touchOccurred(nodeName: hitTestResult)
     }
 }

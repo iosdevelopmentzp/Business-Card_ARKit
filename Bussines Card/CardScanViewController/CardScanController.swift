@@ -15,9 +15,12 @@ protocol CardScanControllerProtocol: NSObjectProtocol {
     
     func startScan()
     func pauseScan()
+    func touchOccurred(nodeName: String)
 }
 
 class CardScanController: NSObject, CardScanControllerProtocol {
+ 
+    
     
     // I N T E R N A L   P R O P E R T I E S
     // MARK: - Internal Properties
@@ -54,5 +57,9 @@ class CardScanController: NSObject, CardScanControllerProtocol {
     
     func pauseScan() {
         arKitController?.pauseSession()
+    }
+    
+    func touchOccurred(nodeName: String) {
+        arKitController?.touchOccurred(nodeName: nodeName)
     }
 }

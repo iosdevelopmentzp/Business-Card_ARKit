@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		880048052239240500E12E01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880048042239240500E12E01 /* Extensions.swift */; };
+		88077995223F8A23005363DD /* ARKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88077994223F8A23005363DD /* ARKitHelper.swift */; };
+		881733482241042700A93009 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733452241042700A93009 /* AVPlayerView.swift */; };
+		881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733462241042700A93009 /* AlphaFrameFilter.swift */; };
+		8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733472241042700A93009 /* AlphaPlayerViewController.swift */; };
+		8817334C2241088900A93009 /* Vertical - vertical duplication.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */; };
 		882E712B223A691B003F12EC /* ChoiceEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E712A223A691B003F12EC /* ChoiceEmployeeViewController.swift */; };
 		882E712D223A695D003F12EC /* ChoiceEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882E712C223A695D003F12EC /* ChoiceEmployee.storyboard */; };
 		882E7130223A6B94003F12EC /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E712F223A6B94003F12EC /* EmployeeCollectionViewCell.swift */; };
@@ -31,6 +36,11 @@
 
 /* Begin PBXFileReference section */
 		880048042239240500E12E01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		88077994223F8A23005363DD /* ARKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitHelper.swift; sourceTree = "<group>"; };
+		881733452241042700A93009 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		881733462241042700A93009 /* AlphaFrameFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaFrameFilter.swift; sourceTree = "<group>"; };
+		881733472241042700A93009 /* AlphaPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaPlayerViewController.swift; sourceTree = "<group>"; };
+		8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vertical - vertical duplication.mp4"; sourceTree = "<group>"; };
 		882E712A223A691B003F12EC /* ChoiceEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEmployeeViewController.swift; sourceTree = "<group>"; };
 		882E712C223A695D003F12EC /* ChoiceEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoiceEmployee.storyboard; sourceTree = "<group>"; };
 		882E712F223A6B94003F12EC /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -65,6 +75,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88077993223F8A0F005363DD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				880048042239240500E12E01 /* Extensions.swift */,
+				88077994223F8A23005363DD /* ARKitHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		88173344224103E100A93009 /* AlphaVideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				881733462241042700A93009 /* AlphaFrameFilter.swift */,
+				881733452241042700A93009 /* AVPlayerView.swift */,
+				881733472241042700A93009 /* AlphaPlayerViewController.swift */,
+			);
+			path = AlphaVideoViewController;
+			sourceTree = "<group>";
+		};
 		882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,19 +141,21 @@
 		8842ED2622368DBC00D3CC05 /* Bussines Card */ = {
 			isa = PBXGroup;
 			children = (
-				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
+				88173344224103E100A93009 /* AlphaVideoViewController */,
+				88077993223F8A0F005363DD /* Helper */,
 				882E7135223A7570003F12EC /* Model */,
 				882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */,
 				8896C877223BAEAB007DEA0D /* CardScanViewController */,
+				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
 				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
 				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
 				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
-				880048042239240500E12E01 /* Extensions.swift */,
 				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
 				8842ED442236983400D3CC05 /* Assets.xcassets */,
 				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
 				8842ED3322368DBC00D3CC05 /* Info.plist */,
+				8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */,
 				88E5AED0223BEB4C00AE9F70 /* scn.scnassets */,
 			);
 			path = "Bussines Card";
@@ -214,6 +245,7 @@
 				882E712D223A695D003F12EC /* ChoiceEmployee.storyboard in Resources */,
 				88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */,
 				8896C87B223BAF26007DEA0D /* CardScanViewController.storyboard in Resources */,
+				8817334C2241088900A93009 /* Vertical - vertical duplication.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +263,11 @@
 				8896C87D223BB5A1007DEA0D /* CardScanArKitController.swift in Sources */,
 				882E712B223A691B003F12EC /* ChoiceEmployeeViewController.swift in Sources */,
 				8896C87F223BB6D8007DEA0D /* CardScanController.swift in Sources */,
+				88077995223F8A23005363DD /* ARKitHelper.swift in Sources */,
+				881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */,
+				8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */,
 				88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */,
+				881733482241042700A93009 /* AVPlayerView.swift in Sources */,
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,

@@ -10,6 +10,17 @@ import UIKit
 import ARKit
 import SceneKit
 
+enum IncodeLinkButton: String {
+    case button_pillboxed
+    case button_glustory
+    case button_cryptonymous
+    case button_insake
+    case button_linkedin
+    case button_facebook
+    case button_twitter
+    case button_instagram
+}
+
 protocol CardScanArKitControllerDelegate: NSObjectProtocol {
     
 }
@@ -20,9 +31,12 @@ protocol CardScanArKitControllerProtocol: NSObjectProtocol {
     
     func setupARSession()
     func pauseSession()
+    func touchOccurred(nodeName: String)
 }
 
 class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
+    
+    
     
     // I N T E R N A L   P R O P E R T I E S
     // MARK: - Internal Properties
@@ -86,9 +100,38 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         session.pause()
     }
     
+    func touchOccurred(nodeName: String) {
+        debugPrint("Touched node name - \(nodeName)")
+        var urlString: String?
+        
+        switch nodeName {
+            case IncodeLinkButton.button_linkedin.rawValue:
+            urlString = "https://www.linkedin.com/company/incode-group"
+            case IncodeLinkButton.button_facebook.rawValue:
+            urlString = "https://www.facebook.com/incode.group/"
+            case IncodeLinkButton.button_twitter.rawValue:
+            urlString = "https://twitter.com/incode_group"
+            case IncodeLinkButton.button_instagram.rawValue:
+            urlString = "https://www.instagram.com/incode_group/"
+        case IncodeLinkButton.button_pillboxed.rawValue:
+            urlString = "http://www.pillbox.org.uk/"
+            case IncodeLinkButton.button_glustory.rawValue:
+            urlString = "http://www.guyslikeus.org/"
+        case IncodeLinkButton.button_cryptonymous.rawValue:
+            urlString = "https://www.collinsdictionary.com/dictionary/english/cryptonymous"
+            case IncodeLinkButton.button_insake.rawValue:
+            urlString = "https://www.behance.net/gallery/74581481/Insake"
+        default:
+            break
+        }
+        
+        if let url = urlString {
+            let request = URLRequest(url: URL(string: url)!)
+            bussinesCard?.loadRequest(_request: request)
+        }
+    }
+    
 }
-
-
 
 extension CardScanArKitController: ARSCNViewDelegate {
     
@@ -123,26 +166,13 @@ extension CardScanArKitController: ARSCNViewDelegate {
             imageHightingAnimationNode.runAction(self.imageHighlightAction) { [weak self] in
                 
                 guard let businessCard = self?.bussinesCard else { return }
-                node.addChildNode(businessCard)
+                
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (_) in
+                    node.addChildNode(businessCard)
+                })
+                
             }
         }
-        
-        
-        
-        
-        
-        
-        
-//        guard let imageAnchor = anchor as? ARImageAnchor else { return }
-//
-//
-//        debugPrint("Finded image"    )
-//
-//        if let name = imageAnchor.referenceImage.name {
-//            debugPrint("\(name) image")
-//        }
-//
-//        let referenceImage = imageAnchor.referenceImage
     }
     
 }

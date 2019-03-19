@@ -5,13 +5,19 @@
   },
   "resources" : [
     {
-      "filename" : "businessCard.arreferenceimage"
+      "filename" : "incode_horizontal.arreferenceimage"
     },
     {
-      "filename" : "businessCardPrint.arreferenceimage"
+      "filename" : "incode_vertical_2.arreferenceimage"
     },
     {
-      "filename" : "IMG_4105.arreferenceimage"
+      "filename" : "incode_vertical_3.arreferenceimage"
+    },
+    {
+      "filename" : "incode_vertical_photo.arreferenceimage"
+    },
+    {
+      "filename" : "incode_vertical.arreferenceimage"
     }
   ]
 }
