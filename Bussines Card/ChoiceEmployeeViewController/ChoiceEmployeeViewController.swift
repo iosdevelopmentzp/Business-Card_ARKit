@@ -49,6 +49,7 @@ class ChoiceEmployeeViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        videoPlayer?.player?.play()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +58,7 @@ class ChoiceEmployeeViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
+        scanButton.alpha = 0.0
         
         UIView.animate(withDuration: 1.0, delay: 5.0, options: [], animations: {
             [weak self] in
@@ -65,17 +67,6 @@ class ChoiceEmployeeViewController: UIViewController {
     }
     
     fileprivate func setupUI () {
-
-        // collection view
-//        let nib = UINib(nibName: cellIdentifier, bundle: nil)
-//        collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
-//
-//        collectionLayout.minimumLineSpacing = 10
-//        collectionLayout.minimumInteritemSpacing = 10
-//        collectionLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        
-        scanButton.alpha = 0.0
-        
         setupVideoView()
     }
     
@@ -93,21 +84,21 @@ class ChoiceEmployeeViewController: UIViewController {
     // MARK: - Private Methods
     
     fileprivate func pushScanController () {
-        let storyboard = UIStoryboard(name: String(describing: CardScanViewController.self) , bundle: nil)
-        let scanVC = storyboard.instantiateViewController(withIdentifier: String(describing: CardScanViewController.self)) as!  CardScanViewController
-        
-        guard let employee = controller.employee(indexPath: selectedIndexPath) else { return }
-        
-        let scanController = CardScanController(employee: employee)
-        scanVC.scanController = scanController
-        
-        let transition: CATransition = CATransition()
-        transition.duration = 0.4
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.fade
-        self.navigationController!.view.layer.add(transition, forKey: nil)
-        
-        navigationController?.pushViewController(scanVC, animated: false)
+//        let storyboard = UIStoryboard(name: String(describing: CardScanViewController.self) , bundle: nil)
+//        let scanVC = storyboard.instantiateViewController(withIdentifier: String(describing: CardScanViewController.self)) as!  CardScanViewController
+//        
+//        guard let employee = controller.employee(indexPath: selectedIndexPath) else { return }
+//        
+//        let scanController = CardScanController(employee: nil, webView: UIWebView() )
+//        //scanVC.scanController = scanController
+//        
+//        let transition: CATransition = CATransition()
+//        transition.duration = 0.4
+//        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//        transition.type = CATransitionType.fade
+//        self.navigationController!.view.layer.add(transition, forKey: nil)
+//        
+//        navigationController?.pushViewController(scanVC, animated: false)
     }
     
     fileprivate func createVideoComposition(for playerItem: AVPlayerItem) -> AVVideoComposition {

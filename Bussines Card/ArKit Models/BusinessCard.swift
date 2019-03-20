@@ -11,35 +11,37 @@ import ARKit
 import WebKit
 import MapKit
 
+enum CardType {
+    case vertical
+    case horizontal
+    
+    func sceneName () -> String {
+        switch self {
+        case .vertical:
+            return "scn.scnassets/BusinessCard.scn"
+        case .horizontal:
+            return "scn.scnassets/BusinessCardHorizontal.scn"
+        }
+    }
+}
+
 class BusinessCard: SCNNode {
     
     // // P R I V A T E   P R O P E R T I E S
     // MARK: - Private Properties
     fileprivate var webView: UIWebView?
     
-    fileprivate var videoViewController: UIViewController?
-    
-    fileprivate let videoPlayer : AVPlayer = {
-        // Load cat video from bundle
-        guard let url = Bundle.main.url(forResource: "Incode video",   withExtension: "mov") else {
-            print("Could not find video file.")
-            return AVPlayer()
-        }
-        return AVPlayer(url: url)
-    }()
-    
-    // C O N S T A N T S
-    //MARK: - Constans
-    let k_sceneName = "scn.scnassets/BusinessCard.scn"
+    var type: CardType
+
     
     // L I F E   C Y C L E
     // MARK: - Life Cycle
     
-    init(employee: (PersonProtocol & EmployeeProtocol) ) {
-        
+    init(type: CardType) {
+        self.type = type
         super.init()
 
-        guard   let template = SCNScene(named: k_sceneName),
+        guard   let template = SCNScene(named: type.sceneName() ),
             let cardRoot = template.rootNode.childNode(withName: "RootNode", recursively: false),
                 let target = cardRoot.childNode(withName: "BusinessCardTarget", recursively: false),
                 let caseStudiesNode = target.childNode(withName: "CaseStudies", recursively: false),
@@ -61,11 +63,10 @@ class BusinessCard: SCNNode {
         
         // web init
         DispatchQueue.main.async { [weak self] in
-        
-            self?.webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 770))
+            let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 770))
             let request = URLRequest(url: URL(string: "https://incode-group.com/")!)
-            self?.webView?.loadRequest(request)
-            
+            webView.loadRequest(request)
+            self?.webView = webView
             webNode.geometry?.firstMaterial?.diffuse.contents = self?.webView
         }
         

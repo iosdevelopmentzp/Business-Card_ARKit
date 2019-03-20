@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Incode" translatesAutoresizingMaskIntoConstraints="NO" id="s5t-bh-qbr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="s5t-bh-qbr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ahu-cA-pWQ"/>
+                            <constraint firstItem="s5t-bh-qbr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="5" id="Ahu-cA-pWQ"/>
                             <constraint firstItem="s5t-bh-qbr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BVw-fI-Tll"/>
                             <constraint firstItem="s5t-bh-qbr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CMt-Pu-34l"/>
                             <constraint firstItem="s5t-bh-qbr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="qEn-rC-xZ0"/>

@@ -29,7 +29,7 @@ protocol CardScanArKitControllerProtocol: NSObjectProtocol {
     var sceneView: ARSCNView {get set}
     var delegate: CardScanArKitControllerDelegate? {get set}
     
-    func setupARSession()
+    func setupARSession(webView: UIWebView)
     func pauseSession()
     func touchOccurred(nodeName: String)
 }
@@ -52,11 +52,14 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     fileprivate let session = ARSession()
     fileprivate let configuration = ARImageTrackingConfiguration()
     fileprivate let updateQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier!).serialSCNQueue")
-    fileprivate var bussinesCard: BusinessCard?
     
-    fileprivate var targetAnchor: ARImageAnchor?
-    fileprivate var businessCardPlaced = false
-    fileprivate var menuShown = false
+    fileprivate var bussinesCardVetical: BusinessCard?
+    fileprivate var bussinesCardHorizontal: BusinessCard?
+    fileprivate var currentType: CardType?
+    fileprivate var verticalCardFirstAppear: Bool = true
+    fileprivate var horizontalCardFirstAppear: Bool = true
+    fileprivate var cardShow: Bool = false
+
     
     // L I F E   C Y C L E
     // MARK: - Life Cycle
@@ -68,12 +71,13 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     }
     
     deinit {
-        bussinesCard?.flushFromMemory()
+        bussinesCardVetical?.flushFromMemory()
+        bussinesCardHorizontal?.flushFromMemory()
     }
     
     // I N T E R N A L   M E T H O D S
     // MARK: - Internal Methods
-    func setupARSession () {
+    func setupARSession (webView: UIWebView) {
         
         //1. Setup Our Tracking Images
         guard let trackingImages =  ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
@@ -90,9 +94,9 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
         updateQueue.async { [weak self] in
-            if let employee = self?.cardScanController?.employee {
-                self?.bussinesCard = BusinessCard(employee: employee)
-            }
+            
+            self?.bussinesCardVetical = BusinessCard(type: .vertical)
+            self?.bussinesCardHorizontal = BusinessCard(type: .horizontal)
         }
     }
     
@@ -114,20 +118,28 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
             case IncodeLinkButton.button_instagram.rawValue:
             urlString = "https://www.instagram.com/incode_group/"
         case IncodeLinkButton.button_pillboxed.rawValue:
-            urlString = "http://www.pillbox.org.uk/"
+            urlString = "https://incode-group.com/blockchain-healthcare-industry-project"
             case IncodeLinkButton.button_glustory.rawValue:
-            urlString = "http://www.guyslikeus.org/"
+            urlString = "https://incode-group.com/project-clustory"
         case IncodeLinkButton.button_cryptonymous.rawValue:
-            urlString = "https://www.collinsdictionary.com/dictionary/english/cryptonymous"
+            urlString = "https://incode-group.com/crypto-exchange-platform-cryptonymous"
             case IncodeLinkButton.button_insake.rawValue:
-            urlString = "https://www.behance.net/gallery/74581481/Insake"
+            urlString = "https://incode-group.com/iot-marketplace-insake"
         default:
             break
         }
         
+        guard let currentType = currentType else { return }
+        
         if let url = urlString {
             let request = URLRequest(url: URL(string: url)!)
-            bussinesCard?.loadRequest(_request: request)
+           
+            switch currentType {
+            case .vertical:
+                bussinesCardVetical?.loadRequest(_request: request)
+            case .horizontal:
+                bussinesCardHorizontal?.loadRequest(_request: request)
+            }  
         }
     }
     
@@ -152,11 +164,43 @@ extension CardScanArKitController: ARSCNViewDelegate {
         
         updateQueue.async { [weak self] in
             guard let self = self else { return }
+            
             let physicalWidth = imageAnchor.referenceImage.physicalSize.width
             let physicalHeight = imageAnchor.referenceImage.physicalSize.height
             
+            guard let imageName = imageAnchor.referenceImage.name else { return }
+            
+            
             let mainPlane = SCNPlane(width: physicalWidth, height: physicalHeight)
-
+            
+            var businessCard: BusinessCard?
+            var type: CardType?
+            switch imageName {
+            case _ where imageName.hasPrefix("incode_horizontal"):
+                businessCard = self.bussinesCardHorizontal
+                type = .horizontal
+            case _ where imageName.hasPrefix("incode_vertical"):
+                businessCard = self.bussinesCardVetical
+                type = .vertical
+            default: break
+            }
+            
+            guard let card = businessCard, let currentType = type
+                else { return }
+            
+            switch currentType {
+            case .horizontal:
+                if !self.horizontalCardFirstAppear {
+                    node.addChildNode(card)
+                    return
+                } else { self.horizontalCardFirstAppear = false}
+            case .vertical:
+                if !self.verticalCardFirstAppear {
+                    node.addChildNode(card)
+                    return
+                } else { self.verticalCardFirstAppear = false }
+            }
+            
             // Add the plane visualization to the scene
             let imageHightingAnimationNode = SCNNode(geometry: mainPlane)
             imageHightingAnimationNode.eulerAngles.x = -.pi / 2
@@ -164,13 +208,10 @@ extension CardScanArKitController: ARSCNViewDelegate {
             node.addChildNode(imageHightingAnimationNode)
             
             imageHightingAnimationNode.runAction(self.imageHighlightAction) { [weak self] in
-                
-                guard let businessCard = self?.bussinesCard else { return }
-                
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (_) in
-                    node.addChildNode(businessCard)
+                    node.addChildNode(card)
                 })
-                
+
             }
         }
     }
@@ -181,27 +222,32 @@ extension CardScanArKitController: ARSessionDelegate {
     
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         
-        if menuShown { return }
-        
         for anchor in anchors{
             
-            if let imageAnchor = anchor as? ARImageAnchor, imageAnchor == targetAnchor{
+            if let imageAnchor = anchor as? ARImageAnchor{
                 
-                if !imageAnchor.isTracked{
-                    debugPrint("f The ImageAnchor Is No Longer Tracked Then Reset The Business Card")
-                    setupARSession()
-                    businessCardPlaced = false
-                    
-                }else{
-                    
-                    //3. Layout The Card Again
-                    if !businessCardPlaced {
-                        debugPrint("Layout The Card Again")
-                        businessCardPlaced = true
-                    }
+                guard let nameImage = imageAnchor.referenceImage.name else { return }
+                
+                guard imageAnchor.isTracked else {
+                    cardShow = false
+                    currentType = nil
+                    return
                 }
+                
+                cardShow = true
+                
+                switch nameImage {
+                case _ where nameImage.hasPrefix("incode_horizontal"):
+                    currentType = .horizontal
+                case _ where nameImage.hasPrefix("incode_vertical"):
+                    currentType = .vertical
+                default: break
+                }
+               
+                
             }
         }
     }
     
 }
+

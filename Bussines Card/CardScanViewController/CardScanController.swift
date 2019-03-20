@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CardScanControllerProtocol: NSObjectProtocol {
-    var employee: Employee {get }
+    var employee: Employee? {get }
     var webView: UIWebView {get}
     var arKitController: CardScanArKitControllerProtocol? {get set}
     
@@ -27,9 +27,9 @@ class CardScanController: NSObject, CardScanControllerProtocol {
     
     var arKitController: CardScanArKitControllerProtocol?
     
-    var employee: Employee {
+    var employee: Employee? {
         didSet {
-            guard let jobLink = employee.jobLink,
+            guard let jobLink = employee?.jobLink,
                 let url = URL(string: jobLink)  else { return }
             
             let request = URLRequest(url: url )
@@ -37,22 +37,24 @@ class CardScanController: NSObject, CardScanControllerProtocol {
         }
     }
     
-    fileprivate(set) lazy var webView: UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: 400, height: 672))
-    
+    fileprivate(set) var webView: UIWebView
 
     // L I F E   C Y C L E
     // MARK: - Life Cycle
     
-    init(employee: Employee) {
+    init(employee: Employee?, webView: UIWebView) {
+        self.webView = webView
         self.employee = employee
         super.init()
     }
+
+    
     
     // I N T E R N A L   M E T H O D S
     // MARK: - Internal Methods
     
     func startScan() {
-        arKitController?.setupARSession()
+        arKitController?.setupARSession(webView: webView)
     }
     
     func pauseScan() {

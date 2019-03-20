@@ -5,19 +5,13 @@
   },
   "resources" : [
     {
+      "filename" : "incode_horizontal_1.arreferenceimage"
+    },
+    {
       "filename" : "incode_horizontal.arreferenceimage"
     },
     {
-      "filename" : "incode_vertical_2.arreferenceimage"
-    },
-    {
-      "filename" : "incode_vertical_3.arreferenceimage"
-    },
-    {
-      "filename" : "incode_vertical_photo.arreferenceimage"
-    },
-    {
-      "filename" : "incode_vertical.arreferenceimage"
+      "filename" : "incode_vertical_oleh.arreferenceimage"
     }
   ]
 }
