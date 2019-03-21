@@ -53,12 +53,6 @@ class CardScanViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
         videoPlayer?.player?.play()
-        
-        scanButton.alpha = 0.0
-        UIView.animate(withDuration: 1.0, delay: 6.0, options: [], animations: {
-            [weak self] in
-            self?.scanButton.alpha = 1.0
-            }, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -26,10 +26,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFs-q1-1US">
-                                <rect key="frame" x="146.5" y="301.5" width="62" height="44"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="Scan">
-                                    <color key="titleColor" red="0.001955163168" green="0.86361655719999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="30" y="593" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.001955163168" green="0.86361655719999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <state key="normal" title="start scanning">
+                                    <color key="titleColor" red="0.97254901959999995" green="0.97260981800000001" blue="0.97243314979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="startScanAction:" destination="9pJ-bx-Yme" eventType="touchUpInside" id="JuP-Zw-fq4"/>
@@ -38,11 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dFs-q1-1US" firstAttribute="centerX" secondItem="stk-aF-2gv" secondAttribute="centerX" constant="-10" id="0Xq-1Y-6gi"/>
+                            <constraint firstItem="bm4-Ji-1Xs" firstAttribute="trailing" secondItem="dFs-q1-1US" secondAttribute="trailing" constant="30" id="0km-qA-M03"/>
                             <constraint firstItem="T0h-wc-D2K" firstAttribute="top" secondItem="bm4-Ji-1Xs" secondAttribute="top" id="2gG-14-cUm"/>
                             <constraint firstItem="bm4-Ji-1Xs" firstAttribute="bottom" secondItem="o97-Er-rOx" secondAttribute="bottom" id="3FS-ib-vof"/>
+                            <constraint firstItem="bm4-Ji-1Xs" firstAttribute="bottom" secondItem="dFs-q1-1US" secondAttribute="bottom" constant="30" id="4Ar-jK-VOa"/>
                             <constraint firstItem="T0h-wc-D2K" firstAttribute="leading" secondItem="bm4-Ji-1Xs" secondAttribute="leading" id="NPB-9A-hTR"/>
-                            <constraint firstItem="dFs-q1-1US" firstAttribute="centerY" secondItem="stk-aF-2gv" secondAttribute="centerY" constant="-10" id="Twl-rh-9Bd"/>
+                            <constraint firstItem="dFs-q1-1US" firstAttribute="leading" secondItem="bm4-Ji-1Xs" secondAttribute="leading" constant="30" id="dYW-PC-2AN"/>
                             <constraint firstItem="bm4-Ji-1Xs" firstAttribute="trailing" secondItem="T0h-wc-D2K" secondAttribute="trailing" id="dff-6A-5cR"/>
                             <constraint firstItem="o97-Er-rOx" firstAttribute="top" secondItem="stk-aF-2gv" secondAttribute="top" id="eMH-xk-xWZ"/>
                             <constraint firstItem="o97-Er-rOx" firstAttribute="leading" secondItem="bm4-Ji-1Xs" secondAttribute="leading" id="rKA-Ys-IuD"/>
