@@ -21,6 +21,8 @@ enum IncodeLinkButton: String {
     case button_instagram
 }
 
+
+
 protocol CardScanArKitControllerDelegate: NSObjectProtocol {
     
 }
@@ -36,6 +38,11 @@ protocol CardScanArKitControllerProtocol: NSObjectProtocol {
 
 class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     
+    enum TypeCard: String {
+        case faceSide = "incode_horizontal_flip_side"
+        case flipSide = "incode_horizontal_face_side"
+        case unknow = ""
+    }
     
     
     // I N T E R N A L   P R O P E R T I E S
@@ -53,12 +60,15 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     fileprivate let configuration = ARImageTrackingConfiguration()
     fileprivate let updateQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier!).serialSCNQueue")
     
-    fileprivate var bussinesCardVetical: BusinessCard?
-    fileprivate var bussinesCardHorizontal: BusinessCard?
-    fileprivate var currentType: CardType?
+    fileprivate var bussinesCardHorizontalFacialSide: BusinessCard?
+    fileprivate var bussinesCardHorizontalFlipSide: BusinessCard?
+    
+    
+    fileprivate var currentType: TypeCard = .unknow
+    
+    
     fileprivate var verticalCardFirstAppear: Bool = true
     fileprivate var horizontalCardFirstAppear: Bool = true
-    fileprivate var cardShow: Bool = false
 
     
     // L I F E   C Y C L E
@@ -71,8 +81,8 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     }
     
     deinit {
-        bussinesCardVetical?.flushFromMemory()
-        bussinesCardHorizontal?.flushFromMemory()
+        bussinesCardHorizontalFacialSide?.flushFromMemory()
+        bussinesCardHorizontalFlipSide?.flushFromMemory()
     }
     
     // I N T E R N A L   M E T H O D S
@@ -95,8 +105,8 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         
         updateQueue.async { [weak self] in
             
-            self?.bussinesCardVetical = BusinessCard(type: .vertical)
-            self?.bussinesCardHorizontal = BusinessCard(type: .horizontal)
+            self?.bussinesCardHorizontalFacialSide = BusinessCard(type: .horizontal)
+            self?.bussinesCardHorizontalFlipSide = BusinessCard(type: .horizontal)
         }
     }
     
@@ -128,17 +138,17 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         default:
             break
         }
-        
-        guard let currentType = currentType else { return }
-        
+
         if let url = urlString {
             let request = URLRequest(url: URL(string: url)!)
            
             switch currentType {
-            case .vertical:
-                bussinesCardVetical?.loadRequest(_request: request)
-            case .horizontal:
-                bussinesCardHorizontal?.loadRequest(_request: request)
+            case .faceSide:
+                bussinesCardHorizontalFacialSide?.loadRequest(_request: request)
+            case .flipSide:
+                bussinesCardHorizontalFlipSide?.loadRequest(_request: request)
+            case .unknow:
+                return
             }  
         }
     }
@@ -174,32 +184,16 @@ extension CardScanArKitController: ARSCNViewDelegate {
             let mainPlane = SCNPlane(width: physicalWidth, height: physicalHeight)
             
             var businessCard: BusinessCard?
-            var type: CardType?
+            
             switch imageName {
-            case _ where imageName.hasPrefix("incode_horizontal"):
-                businessCard = self.bussinesCardHorizontal
-                type = .horizontal
-            case _ where imageName.hasPrefix("incode_vertical"):
-                businessCard = self.bussinesCardVetical
-                type = .vertical
-            default: break
+            case TypeCard.faceSide.rawValue :
+                businessCard = self.bussinesCardHorizontalFacialSide
+            case TypeCard.flipSide.rawValue:
+                businessCard = self.bussinesCardHorizontalFlipSide
+            default: return
             }
             
-            guard let card = businessCard, let currentType = type
-                else { return }
-            
-            switch currentType {
-            case .horizontal:
-                if !self.horizontalCardFirstAppear {
-                    node.addChildNode(card)
-                    return
-                } else { self.horizontalCardFirstAppear = false}
-            case .vertical:
-                if !self.verticalCardFirstAppear {
-                    node.addChildNode(card)
-                    return
-                } else { self.verticalCardFirstAppear = false }
-            }
+            guard let card = businessCard else { return }
             
             // Add the plane visualization to the scene
             let imageHightingAnimationNode = SCNNode(geometry: mainPlane)
@@ -207,11 +201,8 @@ extension CardScanArKitController: ARSCNViewDelegate {
             imageHightingAnimationNode.opacity = 0.25
             node.addChildNode(imageHightingAnimationNode)
             
-            imageHightingAnimationNode.runAction(self.imageHighlightAction) { [weak self] in
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (_) in
+            imageHightingAnimationNode.runAction(self.imageHighlightAction) {
                     node.addChildNode(card)
-                })
-
             }
         }
     }
@@ -229,19 +220,16 @@ extension CardScanArKitController: ARSessionDelegate {
                 guard let nameImage = imageAnchor.referenceImage.name else { return }
                 
                 guard imageAnchor.isTracked else {
-                    cardShow = false
-                    currentType = nil
+                    currentType = .unknow
                     return
                 }
                 
-                cardShow = true
-                
                 switch nameImage {
-                case _ where nameImage.hasPrefix("incode_horizontal"):
-                    currentType = .horizontal
-                case _ where nameImage.hasPrefix("incode_vertical"):
-                    currentType = .vertical
-                default: break
+                case TypeCard.faceSide.rawValue:
+                    currentType = .faceSide
+                case TypeCard.flipSide.rawValue:
+                    currentType = .flipSide
+                default: currentType = .unknow
                 }
                
                 
