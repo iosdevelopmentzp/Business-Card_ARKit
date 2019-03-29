@@ -9,10 +9,14 @@
 import UIKit
 import ARKit
 import SceneKit
+import Pulley
 
 
 class CardScanViewController: UIViewController {
 
+    // I N T E R N A L   P R O P E R T I E S
+    // MARK: - Internal Properties
+    
     
     
     // P R I V A T E   P R O P E R T I E S
@@ -23,21 +27,33 @@ class CardScanViewController: UIViewController {
     
     fileprivate var videoPlayer: AVPlayerView?
     
+    fileprivate lazy var pulleyController: (PulleyControllerProtocol & PulleyDelegate & PulleyDrawerViewControllerDelegate) = CardScanPulleyController()
+    
     fileprivate lazy var arKitScanController: CardScanArKitController = CardScanArKitController(sceneView: sceneView)
     
     fileprivate lazy var scanController: CardScanControllerProtocol? = {
-            
-            let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 770))
-            let request = URLRequest(url: URL(string: "https://incode-group.com/")!)
-            webView.loadRequest(request)
-        return CardScanController(employee: nil, webView: webView)
+        
+        let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 770))
+        let request = URLRequest(url: URL(string: "https://incode-group.com/")!)
+        webView.loadRequest(request)
+        let controller = CardScanController(employee: nil, webView: webView)
+        controller.viewController = self
+        return controller
     }()
+    
+    fileprivate lazy var safariController: SafariControllerProtocol? = {
+        return CardScanSafariController()
+    }()
+    
+    
 
     // L I F E   C Y C L E
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pulleyViewController?.delegate = pulleyController
         
         scanController?.arKitController = arKitScanController
         arKitScanController.cardScanController = scanController
@@ -70,10 +86,12 @@ class CardScanViewController: UIViewController {
             let hitTestResult = self.sceneView.hitTest(currentTouchLocation, options: nil).first?.node.name
             else { return }
         
-        arKitScanController.touchOccurred(nodeName: hitTestResult)
+        scanController?.touchOccurred(nodeName: hitTestResult)
     }
     
     @IBAction func startScanAction(_ sender: UIButton) {
+        
+        videoPlayer?.player?.pause()
         
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.viewForVideo.alpha = 0
@@ -82,8 +100,20 @@ class CardScanViewController: UIViewController {
         
     }
     
+    // I N T E R N A L   M E T H O D S
+    // MARK: - Internal Methods
+    
+    func loadRequest(url: URL) {
+        guard let pulleyController = pulleyViewController as? BrowserProtocol
+            else { return }
+        
+        pulleyController.loadUrl(url: url)
+    }
+    
     // P R I V A T E   M E T H O D S
     // MARK: - Private Methods
+    
+    
     
     fileprivate func setupUI () {
         setupVideoView()
@@ -134,5 +164,4 @@ class CardScanViewController: UIViewController {
             playerItem.videoComposition = self?.createVideoComposition(for: playerItem)
         }
     }
-    
 }

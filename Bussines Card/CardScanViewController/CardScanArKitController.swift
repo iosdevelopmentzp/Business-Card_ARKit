@@ -60,8 +60,8 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     fileprivate let configuration = ARImageTrackingConfiguration()
     fileprivate let updateQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier!).serialSCNQueue")
     
-    fileprivate var bussinesCardHorizontalFacialSide: BusinessCard?
-    fileprivate var bussinesCardHorizontalFlipSide: BusinessCard?
+    //fileprivate var bussinesCardHorizontalFacialSide: BusinessCard?
+    fileprivate var bussinesCardHorizontalFlipSide: BusinessCardWithoutBrowser?
     
     
     fileprivate var currentType: TypeCard = .unknow
@@ -81,7 +81,7 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     }
     
     deinit {
-        bussinesCardHorizontalFacialSide?.flushFromMemory()
+//        bussinesCardHorizontalFacialSide?.flushFromMemory()
         bussinesCardHorizontalFlipSide?.flushFromMemory()
     }
     
@@ -105,8 +105,8 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         
         updateQueue.async { [weak self] in
             
-            self?.bussinesCardHorizontalFacialSide = BusinessCard(type: .horizontal)
-            self?.bussinesCardHorizontalFlipSide = BusinessCard(type: .horizontal)
+            //self?.bussinesCardHorizontalFacialSide = BusinessCard(type: .horizontal)
+            self?.bussinesCardHorizontalFlipSide = BusinessCardWithoutBrowser(type: .horizontalWithoutBrowser)
         }
     }
     
@@ -144,9 +144,11 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
            
             switch currentType {
             case .faceSide:
-                bussinesCardHorizontalFacialSide?.loadRequest(_request: request)
+                break
+                //bussinesCardHorizontalFacialSide?.loadRequest(_request: request)
             case .flipSide:
-                bussinesCardHorizontalFlipSide?.loadRequest(_request: request)
+                break
+               // bussinesCardHorizontalFlipSide?.loadRequest(_request: request)
             case .unknow:
                 return
             }  
@@ -183,17 +185,17 @@ extension CardScanArKitController: ARSCNViewDelegate {
             
             let mainPlane = SCNPlane(width: physicalWidth, height: physicalHeight)
             
-            var businessCard: BusinessCard?
+//            var businessCard: BusinessCard?
             
-            switch imageName {
-            case TypeCard.faceSide.rawValue :
-                businessCard = self.bussinesCardHorizontalFacialSide
-            case TypeCard.flipSide.rawValue:
-                businessCard = self.bussinesCardHorizontalFlipSide
-            default: return
-            }
+//            switch imageName {
+//            case TypeCard.faceSide.rawValue :
+//                businessCard = self.bussinesCardHorizontalFacialSide
+//            case TypeCard.flipSide.rawValue:
+//                businessCard = self.bussinesCardHorizontalFlipSide
+//            default: return
+//            }
             
-            guard let card = businessCard else { return }
+//            guard let card = businessCard else { return }
             
             // Add the plane visualization to the scene
             let imageHightingAnimationNode = SCNNode(geometry: mainPlane)
@@ -201,7 +203,8 @@ extension CardScanArKitController: ARSCNViewDelegate {
             imageHightingAnimationNode.opacity = 0.25
             node.addChildNode(imageHightingAnimationNode)
             
-            imageHightingAnimationNode.runAction(self.imageHighlightAction) {
+            imageHightingAnimationNode.runAction(self.imageHighlightAction) { [weak self] in
+                guard let card = self?.bussinesCardHorizontalFlipSide else { return }
                     node.addChildNode(card)
             }
         }
@@ -231,8 +234,6 @@ extension CardScanArKitController: ARSessionDelegate {
                     currentType = .flipSide
                 default: currentType = .unknow
                 }
-               
-                
             }
         }
     }

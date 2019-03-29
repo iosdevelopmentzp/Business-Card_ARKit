@@ -8,28 +8,14 @@
 
 import Foundation
 import ARKit
-import WebKit
+
 import MapKit
 
-enum CardType {
-    case vertical
-    case horizontal
-    
-    func sceneName () -> String {
-        switch self {
-        case .vertical:
-            return "scn.scnassets/BusinessCard.scn"
-        case .horizontal:
-            return "scn.scnassets/BusinessCardHorizontal.scn"
-        }
-    }
-}
-
-class BusinessCard: SCNNode {
+class BusinessCardWithoutBrowser: SCNNode {
     
     // // P R I V A T E   P R O P E R T I E S
     // MARK: - Private Properties
-    fileprivate var webView: UIWebView?
+    
     
     var type: CardType
 
@@ -38,7 +24,7 @@ class BusinessCard: SCNNode {
     // MARK: - Life Cycle
     
     init(type: CardType) {
-        self.type = type
+        self.type = .horizontal
         super.init()
 
         guard   let template = SCNScene(named: type.sceneName() ),
@@ -50,9 +36,7 @@ class BusinessCard: SCNNode {
                 let buttonFacebook = target.childNode(withName: "button_facebook", recursively: true),
                 let buttonTwitter = target.childNode(withName: "button_twitter", recursively: true),
                 let buttonInstagram = target.childNode(withName: "button_instagram", recursively: true),
-                let webNode = target.childNode(withName: "web", recursively: false),
-                let occlusionCardNode = cardRoot.childNode(withName: "OcclusionCardNode", recursively: false),
-                let occlusionWebNode = cardRoot.childNode(withName: "OcclusionWebNode", recursively: true)
+                let occlusionCardNode = cardRoot.childNode(withName: "OcclusionCardNode", recursively: false)
             else { fatalError("Error Getting Business Card Node Data") }
         
         target.geometry?.firstMaterial?.colorBufferWriteMask = .alpha
@@ -60,15 +44,6 @@ class BusinessCard: SCNNode {
         caseStudiesNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Case studies.png")
         linkNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Link Square")
         
-        
-        // web init
-        DispatchQueue.main.async { [weak self] in
-            let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 770))
-            let request = URLRequest(url: URL(string: "https://incode-group.com/")!)
-            webView.loadRequest(request)
-            self?.webView = webView
-            webNode.geometry?.firstMaterial?.diffuse.contents = self?.webView
-        }
         
         // social link buttons
         buttonLinkedin.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Linkedin")
@@ -79,8 +54,6 @@ class BusinessCard: SCNNode {
         // occlusion
         occlusionCardNode.geometry?.firstMaterial?.colorBufferWriteMask = .alpha
         occlusionCardNode.renderingOrder = -1
-        occlusionWebNode.geometry?.firstMaterial?.colorBufferWriteMask = .alpha
-        occlusionWebNode.renderingOrder = -1
         
         
         self.addChildNode(cardRoot)
@@ -97,10 +70,7 @@ class BusinessCard: SCNNode {
 
         debugPrint("Cleaning Business Card")
 
-        DispatchQueue.main.async { [weak self] in
-            self?.webView?.stopLoading()
-            self?.webView = nil
-        }
+        
 
         if let parentNodes = self.parent?.childNodes{ parentNodes.forEach {
             $0.geometry?.materials.forEach({ (material) in material.diffuse.contents = nil })
@@ -113,12 +83,6 @@ class BusinessCard: SCNNode {
             node.geometry?.materials.forEach({ (material) in material.diffuse.contents = nil })
             node.geometry = nil
             node.removeFromParentNode()
-        }
-    }
-    
-    func loadRequest(_request request: URLRequest) {
-        DispatchQueue.main.async { [weak self] in
-            self?.webView?.loadRequest(request)
         }
     }
     

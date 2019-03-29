@@ -13,12 +13,7 @@
 		881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733462241042700A93009 /* AlphaFrameFilter.swift */; };
 		8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733472241042700A93009 /* AlphaPlayerViewController.swift */; };
 		8817334C2241088900A93009 /* Vertical - vertical duplication.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */; };
-		882E712B223A691B003F12EC /* ChoiceEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E712A223A691B003F12EC /* ChoiceEmployeeViewController.swift */; };
-		882E712D223A695D003F12EC /* ChoiceEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882E712C223A695D003F12EC /* ChoiceEmployee.storyboard */; };
-		882E7130223A6B94003F12EC /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E712F223A6B94003F12EC /* EmployeeCollectionViewCell.swift */; };
-		882E7132223A6BEC003F12EC /* EmployeeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882E7131223A6BEC003F12EC /* EmployeeCollectionViewCell.xib */; };
 		882E7134223A756B003F12EC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E7133223A756B003F12EC /* Employee.swift */; };
-		882E7137223A7AA4003F12EC /* ChoiceEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E7136223A7AA4003F12EC /* ChoiceEmployeeController.swift */; };
 		8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2722368DBC00D3CC05 /* AppDelegate.swift */; };
 		8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */; };
 		8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED2B22368DBC00D3CC05 /* Main.storyboard */; };
@@ -30,23 +25,25 @@
 		8896C87B223BAF26007DEA0D /* CardScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8896C87A223BAF26007DEA0D /* CardScanViewController.storyboard */; };
 		8896C87D223BB5A1007DEA0D /* CardScanArKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C87C223BB5A1007DEA0D /* CardScanArKitController.swift */; };
 		8896C87F223BB6D8007DEA0D /* CardScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C87E223BB6D8007DEA0D /* CardScanController.swift */; };
+		8897F2BA224E4A6500E1B48E /* CardScanPulleyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F2B9224E4A6500E1B48E /* CardScanPulleyController.swift */; };
+		8897F2BC224E4A8700E1B48E /* CardScanSafariController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F2BB224E4A8700E1B48E /* CardScanSafariController.swift */; };
+		8897F2BF224E512B00E1B48E /* MainPulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F2BE224E512B00E1B48E /* MainPulleyViewController.swift */; };
+		8897F2C1224E5BC100E1B48E /* BusinessCardWithoutBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F2C0224E5BC100E1B48E /* BusinessCardWithoutBrowser.swift */; };
+		8897F2C3224E6A0700E1B48E /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F2C2224E6A0700E1B48E /* SafariViewController.swift */; };
 		88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E5AED0223BEB4C00AE9F70 /* scn.scnassets */; };
 		88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */; };
+		A9BF8C6B363443AF3E83F4BE /* Pods_Bussines_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EDEE38A0B6D9F9BF5C26DE /* Pods_Bussines_Card.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AD4517D2B53540DD26A705F /* Pods-Bussines Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bussines Card.release.xcconfig"; path = "Target Support Files/Pods-Bussines Card/Pods-Bussines Card.release.xcconfig"; sourceTree = "<group>"; };
 		880048042239240500E12E01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		88077994223F8A23005363DD /* ARKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitHelper.swift; sourceTree = "<group>"; };
 		881733452241042700A93009 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		881733462241042700A93009 /* AlphaFrameFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaFrameFilter.swift; sourceTree = "<group>"; };
 		881733472241042700A93009 /* AlphaPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaPlayerViewController.swift; sourceTree = "<group>"; };
 		8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vertical - vertical duplication.mp4"; sourceTree = "<group>"; };
-		882E712A223A691B003F12EC /* ChoiceEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEmployeeViewController.swift; sourceTree = "<group>"; };
-		882E712C223A695D003F12EC /* ChoiceEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoiceEmployee.storyboard; sourceTree = "<group>"; };
-		882E712F223A6B94003F12EC /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
-		882E7131223A6BEC003F12EC /* EmployeeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeCollectionViewCell.xib; sourceTree = "<group>"; };
 		882E7133223A756B003F12EC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
-		882E7136223A7AA4003F12EC /* ChoiceEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEmployeeController.swift; sourceTree = "<group>"; };
 		8842ED2422368DBC00D3CC05 /* Bussines Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bussines Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842ED2722368DBC00D3CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
@@ -60,8 +57,15 @@
 		8896C87A223BAF26007DEA0D /* CardScanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardScanViewController.storyboard; sourceTree = "<group>"; };
 		8896C87C223BB5A1007DEA0D /* CardScanArKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanArKitController.swift; sourceTree = "<group>"; };
 		8896C87E223BB6D8007DEA0D /* CardScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanController.swift; sourceTree = "<group>"; };
+		8897F2B9224E4A6500E1B48E /* CardScanPulleyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanPulleyController.swift; sourceTree = "<group>"; };
+		8897F2BB224E4A8700E1B48E /* CardScanSafariController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanSafariController.swift; sourceTree = "<group>"; };
+		8897F2BE224E512B00E1B48E /* MainPulleyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPulleyViewController.swift; sourceTree = "<group>"; };
+		8897F2C0224E5BC100E1B48E /* BusinessCardWithoutBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCardWithoutBrowser.swift; sourceTree = "<group>"; };
+		8897F2C2224E6A0700E1B48E /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		88E5AED0223BEB4C00AE9F70 /* scn.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = scn.scnassets; sourceTree = "<group>"; };
 		88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
+		B37C6644BA54AB878A9F33DF /* Pods-Bussines Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bussines Card.debug.xcconfig"; path = "Target Support Files/Pods-Bussines Card/Pods-Bussines Card.debug.xcconfig"; sourceTree = "<group>"; };
+		E4EDEE38A0B6D9F9BF5C26DE /* Pods_Bussines_Card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bussines_Card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,15 +73,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9BF8C6B363443AF3E83F4BE /* Pods_Bussines_Card.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78930FE907ED3325C4B6879A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4EDEE38A0B6D9F9BF5C26DE /* Pods_Bussines_Card.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		88077993223F8A0F005363DD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				88173344224103E100A93009 /* AlphaVideoViewController */,
 				880048042239240500E12E01 /* Extensions.swift */,
 				88077994223F8A23005363DD /* ARKitHelper.swift */,
 			);
@@ -94,29 +108,10 @@
 			path = AlphaVideoViewController;
 			sourceTree = "<group>";
 		};
-		882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				882E712A223A691B003F12EC /* ChoiceEmployeeViewController.swift */,
-				882E7136223A7AA4003F12EC /* ChoiceEmployeeController.swift */,
-				882E712C223A695D003F12EC /* ChoiceEmployee.storyboard */,
-				882E712E223A6A12003F12EC /* Views */,
-			);
-			path = ChoiceEmployeeViewController;
-			sourceTree = "<group>";
-		};
-		882E712E223A6A12003F12EC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				882E712F223A6B94003F12EC /* EmployeeCollectionViewCell.swift */,
-				882E7131223A6BEC003F12EC /* EmployeeCollectionViewCell.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		882E7135223A7570003F12EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
 				882E7133223A756B003F12EC /* Employee.swift */,
 			);
 			path = Model;
@@ -130,6 +125,8 @@
 				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
 				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
 				8842ED2522368DBC00D3CC05 /* Products */,
+				EFC577C37299FB8FB12AC029 /* Pods */,
+				78930FE907ED3325C4B6879A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,12 +141,10 @@
 		8842ED2622368DBC00D3CC05 /* Bussines Card */ = {
 			isa = PBXGroup;
 			children = (
-				88173344224103E100A93009 /* AlphaVideoViewController */,
 				88077993223F8A0F005363DD /* Helper */,
 				882E7135223A7570003F12EC /* Model */,
-				882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */,
+				8897F2BD224E510200E1B48E /* MainPulleyViewController */,
 				8896C877223BAEAB007DEA0D /* CardScanViewController */,
-				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
 				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
 				8842ED442236983400D3CC05 /* Assets.xcassets */,
@@ -167,17 +162,38 @@
 				8896C878223BAEDF007DEA0D /* CardScanViewController.swift */,
 				8896C87E223BB6D8007DEA0D /* CardScanController.swift */,
 				8896C87C223BB5A1007DEA0D /* CardScanArKitController.swift */,
+				8897F2B9224E4A6500E1B48E /* CardScanPulleyController.swift */,
 				8896C87A223BAF26007DEA0D /* CardScanViewController.storyboard */,
 			);
 			path = CardScanViewController;
+			sourceTree = "<group>";
+		};
+		8897F2BD224E510200E1B48E /* MainPulleyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8897F2BE224E512B00E1B48E /* MainPulleyViewController.swift */,
+				8897F2BB224E4A8700E1B48E /* CardScanSafariController.swift */,
+			);
+			path = MainPulleyViewController;
 			sourceTree = "<group>";
 		};
 		88E5AED2223BEF6600AE9F70 /* ArKit Models */ = {
 			isa = PBXGroup;
 			children = (
 				88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */,
+				8897F2C0224E5BC100E1B48E /* BusinessCardWithoutBrowser.swift */,
+				8897F2C2224E6A0700E1B48E /* SafariViewController.swift */,
 			);
 			path = "ArKit Models";
+			sourceTree = "<group>";
+		};
+		EFC577C37299FB8FB12AC029 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B37C6644BA54AB878A9F33DF /* Pods-Bussines Card.debug.xcconfig */,
+				2AD4517D2B53540DD26A705F /* Pods-Bussines Card.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8842ED3622368DBC00D3CC05 /* Build configuration list for PBXNativeTarget "Bussines Card" */;
 			buildPhases = (
+				6ED06C04AE2528D1C9D134D9 /* [CP] Check Pods Manifest.lock */,
 				8842ED2022368DBC00D3CC05 /* Sources */,
 				8842ED2122368DBC00D3CC05 /* Frameworks */,
 				8842ED2222368DBC00D3CC05 /* Resources */,
+				BF16988C4395E6A94727D97B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,9 +258,7 @@
 			files = (
 				8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */,
 				8842ED452236983400D3CC05 /* Assets.xcassets in Resources */,
-				882E7132223A6BEC003F12EC /* EmployeeCollectionViewCell.xib in Resources */,
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
-				882E712D223A695D003F12EC /* ChoiceEmployee.storyboard in Resources */,
 				88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */,
 				8896C87B223BAF26007DEA0D /* CardScanViewController.storyboard in Resources */,
 				8817334C2241088900A93009 /* Vertical - vertical duplication.mp4 in Resources */,
@@ -251,6 +267,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6ED06C04AE2528D1C9D134D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bussines Card-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF16988C4395E6A94727D97B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bussines Card/Pods-Bussines Card-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bussines Card/Pods-Bussines Card-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8842ED2022368DBC00D3CC05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,21 +321,23 @@
 			files = (
 				8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */,
 				882E7134223A756B003F12EC /* Employee.swift in Sources */,
-				882E7137223A7AA4003F12EC /* ChoiceEmployeeController.swift in Sources */,
+				8897F2BC224E4A8700E1B48E /* CardScanSafariController.swift in Sources */,
 				8896C879223BAEDF007DEA0D /* CardScanViewController.swift in Sources */,
+				8897F2BF224E512B00E1B48E /* MainPulleyViewController.swift in Sources */,
 				8896C87D223BB5A1007DEA0D /* CardScanArKitController.swift in Sources */,
-				882E712B223A691B003F12EC /* ChoiceEmployeeViewController.swift in Sources */,
 				8896C87F223BB6D8007DEA0D /* CardScanController.swift in Sources */,
 				88077995223F8A23005363DD /* ARKitHelper.swift in Sources */,
 				881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */,
+				8897F2BA224E4A6500E1B48E /* CardScanPulleyController.swift in Sources */,
+				8897F2C1224E5BC100E1B48E /* BusinessCardWithoutBrowser.swift in Sources */,
 				8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */,
 				88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */,
 				881733482241042700A93009 /* AVPlayerView.swift in Sources */,
+				8897F2C3224E6A0700E1B48E /* SafariViewController.swift in Sources */,
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,
 				880048052239240500E12E01 /* Extensions.swift in Sources */,
-				882E7130223A6B94003F12EC /* EmployeeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,10 +481,11 @@
 		};
 		8842ED3722368DBC00D3CC05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B37C6644BA54AB878A9F33DF /* Pods-Bussines Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GVL7Z7NM83;
 				INFOPLIST_FILE = "Bussines Card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,7 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incode-group.ar-business-card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Incode Group AR Business Card";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -436,10 +502,11 @@
 		};
 		8842ED3822368DBC00D3CC05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AD4517D2B53540DD26A705F /* Pods-Bussines Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GVL7Z7NM83;
 				INFOPLIST_FILE = "Bussines Card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,7 +515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incode-group.ar-business-card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Incode Group AR Business Card";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -18,11 +18,6 @@ struct Employee: PersonProtocol, EmployeeProtocol {
     var email: String?
     var jobLink: String?
     var job: String
-    
-    func cellData () -> EmployeeCellData {
-        let data = EmployeeCellData.init(avatar: avatar, name: "\(name) \(lastName)")
-        return data
-    }
 }
 
 

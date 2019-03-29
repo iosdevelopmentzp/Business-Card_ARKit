@@ -9,6 +9,8 @@
 import UIKit
 
 protocol CardScanControllerProtocol: NSObjectProtocol {
+    
+    var viewController: CardScanViewController? {get set}
     var employee: Employee? {get }
     var webView: UIWebView {get}
     var arKitController: CardScanArKitControllerProtocol? {get set}
@@ -25,6 +27,8 @@ class CardScanController: NSObject, CardScanControllerProtocol {
     // I N T E R N A L   P R O P E R T I E S
     // MARK: - Internal Properties
     
+    var viewController: CardScanViewController?
+    
     var arKitController: CardScanArKitControllerProtocol?
     
     var employee: Employee? {
@@ -33,7 +37,7 @@ class CardScanController: NSObject, CardScanControllerProtocol {
                 let url = URL(string: jobLink)  else { return }
             
             let request = URLRequest(url: url )
-            webView.loadRequest(request)
+            //webView.loadRequest(request)
         }
     }
     
@@ -62,6 +66,33 @@ class CardScanController: NSObject, CardScanControllerProtocol {
     }
     
     func touchOccurred(nodeName: String) {
-        arKitController?.touchOccurred(nodeName: nodeName)
+        
+        debugPrint("Touched node name - \(nodeName)")
+        var urlString: String?
+        
+        switch nodeName {
+        case IncodeLinkButton.button_linkedin.rawValue:
+            urlString = "https://www.linkedin.com/company/incode-group"
+        case IncodeLinkButton.button_facebook.rawValue:
+            urlString = "https://www.facebook.com/incode.group/"
+        case IncodeLinkButton.button_twitter.rawValue:
+            urlString = "https://twitter.com/incode_group"
+        case IncodeLinkButton.button_instagram.rawValue:
+            urlString = "https://www.instagram.com/incode_group/"
+        case IncodeLinkButton.button_pillboxed.rawValue:
+            urlString = "https://incode-group.com/blockchain-healthcare-industry-project"
+        case IncodeLinkButton.button_glustory.rawValue:
+            urlString = "https://incode-group.com/project-clustory"
+        case IncodeLinkButton.button_cryptonymous.rawValue:
+            urlString = "https://incode-group.com/crypto-exchange-platform-cryptonymous"
+        case IncodeLinkButton.button_insake.rawValue:
+            urlString = "https://incode-group.com/iot-marketplace-insake"
+        default:
+            break
+        }
+        
+        if let urlString = urlString, let url = URL(string: urlString)  {
+            viewController?.loadRequest(url: url)
+        }
     }
 }
