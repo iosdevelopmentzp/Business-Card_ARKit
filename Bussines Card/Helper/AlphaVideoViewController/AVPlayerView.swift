@@ -12,6 +12,7 @@ import UIKit
 class AVPlayerView: UIView {
 
   deinit {
+    debugPrint("AVPlayerView deinited")
     self.playerItem = nil
   }
   

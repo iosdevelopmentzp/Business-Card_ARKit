@@ -36,10 +36,15 @@ class CardScanController: NSObject, CardScanControllerProtocol {
             guard let jobLink = employee?.jobLink,
                 let url = URL(string: jobLink)  else { return }
             
-            let request = URLRequest(url: url )
+            //let request = URLRequest(url: url )
             //webView.loadRequest(request)
         }
     }
+    
+    // P R I V A T E   P R O P E R T I E S
+    // MARK: - Private Properties
+    
+    fileprivate var isFirstTouch: Bool = true
     
     fileprivate(set) var webView: UIWebView
 
@@ -88,7 +93,10 @@ class CardScanController: NSObject, CardScanControllerProtocol {
         case IncodeLinkButton.button_insake.rawValue:
             urlString = "https://incode-group.com/iot-marketplace-insake"
         default:
-            break
+            if isFirstTouch {
+                urlString = "https://incode-group.com/"
+                isFirstTouch = false
+            }
         }
         
         if let urlString = urlString, let url = URL(string: urlString)  {

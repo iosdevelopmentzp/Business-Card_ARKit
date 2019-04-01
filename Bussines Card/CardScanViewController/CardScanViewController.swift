@@ -14,36 +14,27 @@ import Pulley
 
 class CardScanViewController: UIViewController {
 
-    // I N T E R N A L   P R O P E R T I E S
-    // MARK: - Internal Properties
-    
-    
-    
     // P R I V A T E   P R O P E R T I E S
     // MARK: - Private Properties
     @IBOutlet fileprivate weak var sceneView: ARSCNView!
     @IBOutlet fileprivate weak var viewForVideo: UIView!
     @IBOutlet fileprivate weak var scanButton: UIButton!
     
-    fileprivate var videoPlayer: AVPlayerView?
+    fileprivate var videoPlayerView: AVPlayerView?
     
     fileprivate lazy var pulleyController: (PulleyControllerProtocol & PulleyDelegate & PulleyDrawerViewControllerDelegate) = CardScanPulleyController()
     
     fileprivate lazy var arKitScanController: CardScanArKitController = CardScanArKitController(sceneView: sceneView)
     
-    fileprivate lazy var scanController: CardScanControllerProtocol? = {
-        
-        let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 770))
-        let request = URLRequest(url: URL(string: "https://incode-group.com/")!)
-        webView.loadRequest(request)
-        let controller = CardScanController(employee: nil, webView: webView)
-        controller.viewController = self
-        return controller
-    }()
+    fileprivate lazy var scanController: CardScanControllerProtocol? = getScanController()
     
-    fileprivate lazy var safariController: SafariControllerProtocol? = {
-        return CardScanSafariController()
-    }()
+    fileprivate lazy var safariController: SafariControllerProtocol? = CardScanSafariController()
+    
+    struct Constants {
+        static let backgroundColor = UIColor(named: "CardScanViewController_background")
+        static let startScaningButtonColor = UIColor(named: "CardScanViewController_button")
+        static let startScaningButtonTitleColors = UIColor(named: "CardScanViewController_button_title")
+    }
     
     
 
@@ -68,7 +59,12 @@ class CardScanViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        videoPlayer?.player?.play()
+        
+        videoPlayerView?.alpha = 0.0
+        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { (_) in
+            self.videoPlayerView?.alpha = 1.0
+            self.videoPlayerView?.player?.play()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,21 +73,32 @@ class CardScanViewController: UIViewController {
         scanController?.pauseScan()
     }
     
+    fileprivate func getScanController() -> CardScanController {
+        let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 770))
+        let request = URLRequest(url: URL(string: "https://incode-group.com/")!)
+        webView.loadRequest(request)
+        let controller = CardScanController(employee: nil, webView: webView)
+        controller.viewController = self
+        return controller
+    }
+    
     // U S E R  I N T E R A C T I O N
     // MARK: - User Interaction
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        guard let currentTouchLocation = touches.first?.location(in: self.sceneView),
-            let hitTestResult = self.sceneView.hitTest(currentTouchLocation, options: nil).first?.node.name
-            else { return }
+        guard let currentTouchLocation = touches.first?.location(in: self.sceneView) else { return }
+        let hitTestResult = self.sceneView.hitTest(currentTouchLocation, options: nil).first?.node.name ?? ""
+        
         
         scanController?.touchOccurred(nodeName: hitTestResult)
     }
     
     @IBAction func startScanAction(_ sender: UIButton) {
         
-        videoPlayer?.player?.pause()
+        videoPlayerView?.player?.pause()
+        videoPlayerView?.removeFromSuperview()
+        videoPlayerView = nil
         
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.viewForVideo.alpha = 0
@@ -112,11 +119,46 @@ class CardScanViewController: UIViewController {
     
     // P R I V A T E   M E T H O D S
     // MARK: - Private Methods
-    
-    
+
+    // UI methods
     
     fileprivate func setupUI () {
-        setupVideoView()
+        
+        scanButton.setTitleColor(Constants.startScaningButtonTitleColors, for: .normal)
+        scanButton.backgroundColor = Constants.startScaningButtonColor
+        
+        setupVideoView(backGroundColor: Constants.backgroundColor ?? .black)
+    }
+    
+    
+    fileprivate func setupVideoView(backGroundColor: UIColor) {
+        
+        let videoSize = CGSize(width: 350, height: 350)
+        let playerView = AVPlayerView(frame: CGRect(origin: .zero, size: videoSize))
+        videoPlayerView = playerView
+        viewForVideo.addSubview(playerView)
+        
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        playerView.widthAnchor.constraint(equalToConstant: videoSize.width).isActive = true
+        playerView.heightAnchor.constraint(equalToConstant: videoSize.height).isActive = true
+        playerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        let playerLayer: AVPlayerLayer = playerView.playerLayer
+        playerLayer.pixelBufferAttributes = [
+            (kCVPixelBufferPixelFormatTypeKey as String): kCVPixelFormatType_32BGRA]
+        
+        viewForVideo.backgroundColor = backGroundColor
+        
+        let videoUrl: URL = Bundle.main.url(forResource: "Vertical - vertical duplication", withExtension: "mp4")!
+        playerView.loadVideo(from: videoUrl) { [weak self] playerItem, error in
+            guard let playerItem = playerItem, error == nil else {
+                return print("Something went wrong when loading our video", error!)
+            }
+            
+            playerItem.seekingWaitsForVideoCompositionRendering = true
+            playerItem.videoComposition = self?.createVideoComposition(for: playerItem)
+        }
     }
     
     fileprivate func createVideoComposition(for playerItem: AVPlayerItem) -> AVVideoComposition {
@@ -135,33 +177,4 @@ class CardScanViewController: UIViewController {
         return composition
     }
     
-    fileprivate func setupVideoView() {
-        
-        let videoSize = CGSize(width: 350, height: 350)
-        let playerView = AVPlayerView(frame: CGRect(origin: .zero, size: videoSize))
-        videoPlayer = playerView
-        viewForVideo.addSubview(playerView)
-        
-        playerView.translatesAutoresizingMaskIntoConstraints = false
-        playerView.widthAnchor.constraint(equalToConstant: videoSize.width).isActive = true
-        playerView.heightAnchor.constraint(equalToConstant: videoSize.height).isActive = true
-        playerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
-        let playerLayer: AVPlayerLayer = playerView.playerLayer
-        playerLayer.pixelBufferAttributes = [
-            (kCVPixelBufferPixelFormatTypeKey as String): kCVPixelFormatType_32BGRA]
-        
-        viewForVideo.backgroundColor = .black
-        
-        let videoUrl: URL = Bundle.main.url(forResource: "Vertical - vertical duplication", withExtension: "mp4")!
-        playerView.loadVideo(from: videoUrl) { [weak self] playerItem, error in
-            guard let playerItem = playerItem, error == nil else {
-                return print("Something went wrong when loading our video", error!)
-            }
-            
-            playerItem.seekingWaitsForVideoCompositionRendering = true
-            playerItem.videoComposition = self?.createVideoComposition(for: playerItem)
-        }
-    }
 }

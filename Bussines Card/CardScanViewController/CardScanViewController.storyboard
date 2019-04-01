@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway Regular.ttf">
+            <string>Raleway-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Card Scan View Controller-->
         <scene sceneID="jbC-4o-F67">
@@ -23,28 +28,31 @@
                             </arscnView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0h-wc-D2K">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFs-q1-1US">
-                                <rect key="frame" x="30" y="593" width="315" height="44"/>
-                                <color key="backgroundColor" red="0.001955163168" green="0.86361655719999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <rect key="frame" x="57" y="503" width="261" height="64"/>
+                                <color key="backgroundColor" red="0.44705882352941173" green="0.71372549019607845" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="ecf-aS-imh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                 <state key="normal" title="start scanning">
-                                    <color key="titleColor" red="0.97254901959999995" green="0.97260981800000001" blue="0.97243314979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="startScanAction:" destination="9pJ-bx-Yme" eventType="touchUpInside" id="JuP-Zw-fq4"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.090196078431372548" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bm4-Ji-1Xs" firstAttribute="trailing" secondItem="dFs-q1-1US" secondAttribute="trailing" constant="30" id="0km-qA-M03"/>
+                            <constraint firstItem="bm4-Ji-1Xs" firstAttribute="trailing" secondItem="dFs-q1-1US" secondAttribute="trailing" constant="57" id="0km-qA-M03"/>
                             <constraint firstItem="T0h-wc-D2K" firstAttribute="top" secondItem="bm4-Ji-1Xs" secondAttribute="top" id="2gG-14-cUm"/>
                             <constraint firstItem="bm4-Ji-1Xs" firstAttribute="bottom" secondItem="o97-Er-rOx" secondAttribute="bottom" id="3FS-ib-vof"/>
-                            <constraint firstItem="bm4-Ji-1Xs" firstAttribute="bottom" secondItem="dFs-q1-1US" secondAttribute="bottom" constant="30" id="4Ar-jK-VOa"/>
+                            <constraint firstItem="bm4-Ji-1Xs" firstAttribute="bottom" secondItem="dFs-q1-1US" secondAttribute="bottom" constant="100" id="4Ar-jK-VOa"/>
                             <constraint firstItem="T0h-wc-D2K" firstAttribute="leading" secondItem="bm4-Ji-1Xs" secondAttribute="leading" id="NPB-9A-hTR"/>
-                            <constraint firstItem="dFs-q1-1US" firstAttribute="leading" secondItem="bm4-Ji-1Xs" secondAttribute="leading" constant="30" id="dYW-PC-2AN"/>
+                            <constraint firstItem="dFs-q1-1US" firstAttribute="leading" secondItem="bm4-Ji-1Xs" secondAttribute="leading" constant="57" id="dYW-PC-2AN"/>
                             <constraint firstItem="bm4-Ji-1Xs" firstAttribute="trailing" secondItem="T0h-wc-D2K" secondAttribute="trailing" id="dff-6A-5cR"/>
                             <constraint firstItem="o97-Er-rOx" firstAttribute="top" secondItem="stk-aF-2gv" secondAttribute="top" id="eMH-xk-xWZ"/>
                             <constraint firstItem="o97-Er-rOx" firstAttribute="leading" secondItem="bm4-Ji-1Xs" secondAttribute="leading" id="rKA-Ys-IuD"/>

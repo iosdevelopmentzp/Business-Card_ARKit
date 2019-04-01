@@ -30,6 +30,7 @@
 		8897F2BF224E512B00E1B48E /* MainPulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F2BE224E512B00E1B48E /* MainPulleyViewController.swift */; };
 		8897F2C1224E5BC100E1B48E /* BusinessCardWithoutBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F2C0224E5BC100E1B48E /* BusinessCardWithoutBrowser.swift */; };
 		8897F2C3224E6A0700E1B48E /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897F2C2224E6A0700E1B48E /* SafariViewController.swift */; };
+		88E27D15225200A700F48F9B /* Raleway Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88E27D14225200A700F48F9B /* Raleway Regular.ttf */; };
 		88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E5AED0223BEB4C00AE9F70 /* scn.scnassets */; };
 		88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */; };
 		A9BF8C6B363443AF3E83F4BE /* Pods_Bussines_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EDEE38A0B6D9F9BF5C26DE /* Pods_Bussines_Card.framework */; };
@@ -62,6 +63,7 @@
 		8897F2BE224E512B00E1B48E /* MainPulleyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPulleyViewController.swift; sourceTree = "<group>"; };
 		8897F2C0224E5BC100E1B48E /* BusinessCardWithoutBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCardWithoutBrowser.swift; sourceTree = "<group>"; };
 		8897F2C2224E6A0700E1B48E /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
+		88E27D14225200A700F48F9B /* Raleway Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway Regular.ttf"; sourceTree = "<group>"; };
 		88E5AED0223BEB4C00AE9F70 /* scn.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = scn.scnassets; sourceTree = "<group>"; };
 		88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
 		B37C6644BA54AB878A9F33DF /* Pods-Bussines Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bussines Card.debug.xcconfig"; path = "Target Support Files/Pods-Bussines Card/Pods-Bussines Card.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		88077993223F8A0F005363DD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				88E27D132252009000F48F9B /* Fonts */,
 				88173344224103E100A93009 /* AlphaVideoViewController */,
 				880048042239240500E12E01 /* Extensions.swift */,
 				88077994223F8A23005363DD /* ARKitHelper.swift */,
@@ -177,6 +180,14 @@
 			path = MainPulleyViewController;
 			sourceTree = "<group>";
 		};
+		88E27D132252009000F48F9B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				88E27D14225200A700F48F9B /* Raleway Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		88E5AED2223BEF6600AE9F70 /* ArKit Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +272,7 @@
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
 				88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */,
 				8896C87B223BAF26007DEA0D /* CardScanViewController.storyboard in Resources */,
+				88E27D15225200A700F48F9B /* Raleway Regular.ttf in Resources */,
 				8817334C2241088900A93009 /* Vertical - vertical duplication.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
