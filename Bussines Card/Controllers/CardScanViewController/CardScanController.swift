@@ -100,6 +100,7 @@ class CardScanController: NSObject, CardScanControllerProtocol {
         }
         
         if let urlString = urlString, let url = URL(string: urlString)  {
+            isFirstTouch = false
             viewController?.loadRequest(url: url)
         }
     }

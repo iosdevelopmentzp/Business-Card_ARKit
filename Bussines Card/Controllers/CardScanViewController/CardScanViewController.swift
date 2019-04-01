@@ -20,7 +20,7 @@ class CardScanViewController: UIViewController {
     @IBOutlet fileprivate weak var viewForVideo: UIView!
     @IBOutlet fileprivate weak var scanButton: UIButton!
     
-    fileprivate var videoPlayerView: AVPlayerView?
+    @IBOutlet fileprivate var videoPlayerView: AVPlayerView!
     
     fileprivate lazy var pulleyController: (PulleyControllerProtocol & PulleyDelegate & PulleyDrawerViewControllerDelegate) = CardScanPulleyController()
     
@@ -34,6 +34,7 @@ class CardScanViewController: UIViewController {
         static let backgroundColor = UIColor(named: "CardScanViewController_background")
         static let startScaningButtonColor = UIColor(named: "CardScanViewController_button")
         static let startScaningButtonTitleColors = UIColor(named: "CardScanViewController_button_title")
+        static let startButtonCornerRadius: CGFloat = 6.0
     }
     
     
@@ -124,34 +125,30 @@ class CardScanViewController: UIViewController {
     
     fileprivate func setupUI () {
         
+        // scanButton setup
         scanButton.setTitleColor(Constants.startScaningButtonTitleColors, for: .normal)
         scanButton.backgroundColor = Constants.startScaningButtonColor
         
-        setupVideoView(backGroundColor: Constants.backgroundColor ?? .black)
+        scanButton.layer.cornerRadius = Constants.startButtonCornerRadius
+        scanButton.layer.masksToBounds = false
+        scanButton.layer.shadowColor = UIColor.gray.cgColor
+        scanButton.layer.shadowOpacity = 0.3
+        scanButton.layer.shadowRadius = 4
+        scanButton.layer.shadowOffset = CGSize.init(width: 1, height: 3)
+
+        // video setup
+        viewForVideo.backgroundColor = Constants.backgroundColor
+        setupVideoView()
     }
     
     
-    fileprivate func setupVideoView(backGroundColor: UIColor) {
+    fileprivate func setupVideoView() {
         
-        let videoSize = CGSize(width: 350, height: 350)
-        let playerView = AVPlayerView(frame: CGRect(origin: .zero, size: videoSize))
-        videoPlayerView = playerView
-        viewForVideo.addSubview(playerView)
-        
-        playerView.translatesAutoresizingMaskIntoConstraints = false
-        playerView.widthAnchor.constraint(equalToConstant: videoSize.width).isActive = true
-        playerView.heightAnchor.constraint(equalToConstant: videoSize.height).isActive = true
-        playerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
-        let playerLayer: AVPlayerLayer = playerView.playerLayer
-        playerLayer.pixelBufferAttributes = [
-            (kCVPixelBufferPixelFormatTypeKey as String): kCVPixelFormatType_32BGRA]
-        
-        viewForVideo.backgroundColor = backGroundColor
-        
+        let playerLayer: AVPlayerLayer = videoPlayerView.playerLayer
+        playerLayer.pixelBufferAttributes = [ (kCVPixelBufferPixelFormatTypeKey as String): kCVPixelFormatType_32BGRA]
+
         let videoUrl: URL = Bundle.main.url(forResource: "Vertical - vertical duplication", withExtension: "mp4")!
-        playerView.loadVideo(from: videoUrl) { [weak self] playerItem, error in
+        videoPlayerView.loadVideo(from: videoUrl) { [weak self] playerItem, error in
             guard let playerItem = playerItem, error == nil else {
                 return print("Something went wrong when loading our video", error!)
             }

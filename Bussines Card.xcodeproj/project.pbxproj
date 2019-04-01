@@ -16,7 +16,6 @@
 		882E7134223A756B003F12EC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E7133223A756B003F12EC /* Employee.swift */; };
 		8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2722368DBC00D3CC05 /* AppDelegate.swift */; };
 		8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */; };
-		8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED2B22368DBC00D3CC05 /* Main.storyboard */; };
 		8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */; };
 		8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */; };
 		8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */; };
@@ -48,7 +47,6 @@
 		8842ED2422368DBC00D3CC05 /* Bussines Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bussines Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842ED2722368DBC00D3CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
-		8842ED2C22368DBC00D3CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8842ED3122368DBC00D3CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8842ED3322368DBC00D3CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+Interactor.swift"; sourceTree = "<group>"; };
@@ -90,15 +88,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		88077993223F8A0F005363DD /* Helper */ = {
+		88077993223F8A0F005363DD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				88E27D192252126900F48F9B /* ARSceneViewController (fo example) */,
 				88E27D132252009000F48F9B /* Fonts */,
 				88173344224103E100A93009 /* AlphaVideoViewController */,
 				880048042239240500E12E01 /* Extensions.swift */,
 				88077994223F8A23005363DD /* ARKitHelper.swift */,
 			);
-			path = Helper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		88173344224103E100A93009 /* AlphaVideoViewController */ = {
@@ -124,9 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				8842ED2622368DBC00D3CC05 /* Bussines Card */,
-				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
-				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
-				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
 				8842ED2522368DBC00D3CC05 /* Products */,
 				EFC577C37299FB8FB12AC029 /* Pods */,
 				78930FE907ED3325C4B6879A /* Frameworks */,
@@ -144,17 +140,11 @@
 		8842ED2622368DBC00D3CC05 /* Bussines Card */ = {
 			isa = PBXGroup;
 			children = (
-				88077993223F8A0F005363DD /* Helper */,
-				882E7135223A7570003F12EC /* Model */,
-				8897F2BD224E510200E1B48E /* MainPulleyViewController */,
-				8896C877223BAEAB007DEA0D /* CardScanViewController */,
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
-				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
-				8842ED442236983400D3CC05 /* Assets.xcassets */,
-				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
-				8842ED3322368DBC00D3CC05 /* Info.plist */,
-				8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */,
-				88E5AED0223BEB4C00AE9F70 /* scn.scnassets */,
+				88E27D1722520E9900F48F9B /* Controllers */,
+				882E7135223A7570003F12EC /* Model */,
+				88077993223F8A0F005363DD /* Helpers */,
+				88E27D1822520EF300F48F9B /* Resources */,
 			);
 			path = "Bussines Card";
 			sourceTree = "<group>";
@@ -186,6 +176,37 @@
 				88E27D14225200A700F48F9B /* Raleway Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		88E27D1722520E9900F48F9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8897F2BD224E510200E1B48E /* MainPulleyViewController */,
+				8896C877223BAEAB007DEA0D /* CardScanViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		88E27D1822520EF300F48F9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8842ED442236983400D3CC05 /* Assets.xcassets */,
+				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
+				8842ED3322368DBC00D3CC05 /* Info.plist */,
+				8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */,
+				88E5AED0223BEB4C00AE9F70 /* scn.scnassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		88E27D192252126900F48F9B /* ARSceneViewController (fo example) */ = {
+			isa = PBXGroup;
+			children = (
+				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
+				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
+				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
+			);
+			path = "ARSceneViewController (fo example)";
 			sourceTree = "<group>";
 		};
 		88E5AED2223BEF6600AE9F70 /* ArKit Models */ = {
@@ -269,7 +290,6 @@
 			files = (
 				8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */,
 				8842ED452236983400D3CC05 /* Assets.xcassets in Resources */,
-				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
 				88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */,
 				8896C87B223BAF26007DEA0D /* CardScanViewController.storyboard in Resources */,
 				88E27D15225200A700F48F9B /* Raleway Regular.ttf in Resources */,
@@ -356,14 +376,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8842ED2B22368DBC00D3CC05 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8842ED2C22368DBC00D3CC05 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -496,17 +508,17 @@
 			baseConfigurationReference = B37C6644BA54AB878A9F33DF /* Pods-Bussines Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GVL7Z7NM83;
-				INFOPLIST_FILE = "Bussines Card/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Bussines Card/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incode-group.ar-business-card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Incode Group AR Business Card";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -517,17 +529,17 @@
 			baseConfigurationReference = 2AD4517D2B53540DD26A705F /* Pods-Bussines Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GVL7Z7NM83;
-				INFOPLIST_FILE = "Bussines Card/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Bussines Card/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incode-group.ar-business-card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Incode Group AR Business Card";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
