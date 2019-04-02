@@ -75,13 +75,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		88077993223F8A0F005363DD /* Helper */ = {
+		88077993223F8A0F005363DD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				880048042239240500E12E01 /* Extensions.swift */,
+				88D57E6822533D200075E08D /* For example */,
+				88173344224103E100A93009 /* AlphaVideoViewController */,
+				8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */,
+				8842ED3322368DBC00D3CC05 /* Info.plist */,
 				88077994223F8A23005363DD /* ARKitHelper.swift */,
+				880048042239240500E12E01 /* Extensions.swift */,
+				8842ED442236983400D3CC05 /* Assets.xcassets */,
+				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
+				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
 			);
-			path = Helper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		88173344224103E100A93009 /* AlphaVideoViewController */ = {
@@ -114,21 +121,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		882E7135223A7570003F12EC /* Model */ = {
+		882E7135223A7570003F12EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				882E7133223A756B003F12EC /* Employee.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8842ED1B22368DBC00D3CC05 = {
 			isa = PBXGroup;
 			children = (
 				8842ED2622368DBC00D3CC05 /* Bussines Card */,
-				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
-				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
-				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
 				8842ED2522368DBC00D3CC05 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,19 +148,11 @@
 		8842ED2622368DBC00D3CC05 /* Bussines Card */ = {
 			isa = PBXGroup;
 			children = (
-				88173344224103E100A93009 /* AlphaVideoViewController */,
-				88077993223F8A0F005363DD /* Helper */,
-				882E7135223A7570003F12EC /* Model */,
-				882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */,
-				8896C877223BAEAB007DEA0D /* CardScanViewController */,
-				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
-				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
-				8842ED442236983400D3CC05 /* Assets.xcassets */,
-				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
-				8842ED3322368DBC00D3CC05 /* Info.plist */,
-				8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */,
-				88E5AED0223BEB4C00AE9F70 /* scn.scnassets */,
+				88D57E6622533C7F0075E08D /* Controllers */,
+				88D57E6722533CD50075E08D /* ArKit */,
+				88077993223F8A0F005363DD /* Helpers */,
+				882E7135223A7570003F12EC /* Models */,
 			);
 			path = "Bussines Card";
 			sourceTree = "<group>";
@@ -170,6 +166,35 @@
 				88D57E64225337790075E08D /* CardScanViewController.storyboard */,
 			);
 			path = CardScanViewController;
+			sourceTree = "<group>";
+		};
+		88D57E6622533C7F0075E08D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				882E7129223A68C2003F12EC /* ChoiceEmployeeViewController */,
+				8896C877223BAEAB007DEA0D /* CardScanViewController */,
+			);
+			name = Controllers;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		88D57E6722533CD50075E08D /* ArKit */ = {
+			isa = PBXGroup;
+			children = (
+				88E5AED0223BEB4C00AE9F70 /* scn.scnassets */,
+				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
+			);
+			path = ArKit;
+			sourceTree = "<group>";
+		};
+		88D57E6822533D200075E08D /* For example */ = {
+			isa = PBXGroup;
+			children = (
+				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
+				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
+				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
+			);
+			path = "For example";
 			sourceTree = "<group>";
 		};
 		88E5AED2223BEF6600AE9F70 /* ArKit Models */ = {
@@ -421,7 +446,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JC64BVWLY;
-				INFOPLIST_FILE = "Bussines Card/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Bussines Card/Helpers/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,7 +466,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JC64BVWLY;
-				INFOPLIST_FILE = "Bussines Card/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Bussines Card/Helpers/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
