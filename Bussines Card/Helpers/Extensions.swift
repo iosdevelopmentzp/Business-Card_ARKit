@@ -19,4 +19,10 @@ extension CGFloat {
     func float () -> Float {
         return Float(self)
     }
+    
+    var double: Double  {
+        return Double(self)
+    }
 }
+
+

@@ -18,16 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Incode" translatesAutoresizingMaskIntoConstraints="NO" id="s5t-bh-qbr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="RvA-nF-GT9">
+                                <rect key="frame" x="50" y="505" width="275" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RvA-nF-GT9" secondAttribute="height" multiplier="221:50" id="Qr2-4n-L6z"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.090196078431372548" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="s5t-bh-qbr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="5" id="Ahu-cA-pWQ"/>
-                            <constraint firstItem="s5t-bh-qbr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BVw-fI-Tll"/>
-                            <constraint firstItem="s5t-bh-qbr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CMt-Pu-34l"/>
-                            <constraint firstItem="s5t-bh-qbr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="qEn-rC-xZ0"/>
+                            <constraint firstItem="RvA-nF-GT9" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="HG4-LO-4yg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RvA-nF-GT9" secondAttribute="bottom" constant="100" id="Isk-l1-ydS"/>
+                            <constraint firstItem="RvA-nF-GT9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="S1P-lf-Nv8"/>
+                            <constraint firstAttribute="trailing" secondItem="RvA-nF-GT9" secondAttribute="trailing" constant="50" id="dyy-4k-wIT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Incode" width="153.1199951171875" height="266.6400146484375"/>
+        <image name="Logo" width="332" height="88"/>
     </resources>
 </document>

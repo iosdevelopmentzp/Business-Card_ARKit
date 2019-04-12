@@ -19,8 +19,29 @@ enum IncodeLinkButton: String {
     case button_facebook
     case button_twitter
     case button_instagram
+    
+    func link () -> String {
+        
+        switch self {
+        case .button_linkedin:
+            return "https://www.linkedin.com/company/incode-group"
+        case .button_facebook:
+            return "https://www.facebook.com/incode.group/"
+        case .button_twitter:
+            return "https://twitter.com/incode_group"
+        case .button_instagram:
+            return "https://www.instagram.com/incode_group/"
+        case .button_pillboxed:
+            return "https://incode-group.com/blockchain-healthcare-industry-project"
+        case .button_glustory:
+            return "https://incode-group.com/project-clustory"
+        case .button_cryptonymous:
+            return "https://incode-group.com/crypto-exchange-platform-cryptonymous"
+        case .button_insake:
+            return "https://incode-group.com/iot-marketplace-insake"
+        }
+    }
 }
-
 
 
 protocol CardScanArKitControllerDelegate: NSObjectProtocol {
@@ -39,8 +60,11 @@ protocol CardScanArKitControllerProtocol: NSObjectProtocol {
 class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     
     enum TypeCard: String {
-        case faceSide = "incode_horizontal_flip_side"
-        case flipSide = "incode_horizontal_face_side"
+        case horizontalFaceSide = "incode_horizontal_face_side"
+        case horizontalFlipSideKravchenko = "incode_horizontal_flip_side_kravchenko"
+        case horizontalFlipSideGrebenataya = "incode_horizontal_flip_side_grebenataya"
+        case verticalMeleshko = "incode_vertical_meleshko"
+        case verticalGerasymenko = "incode_vertical_gerasymenko"
         case unknow = ""
     }
     
@@ -60,9 +84,12 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     fileprivate let configuration = ARImageTrackingConfiguration()
     fileprivate let updateQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier!).serialSCNQueue")
     
-    fileprivate var bussinesCardHorizontalFacialSide: BusinessCard?
+
+    fileprivate var bussinesCardHorizontalFaceSide: BusinessCard?
     fileprivate var bussinesCardHorizontalFlipSide: BusinessCard?
+    fileprivate var bussinesCardVertical: BusinessCard?
     
+    fileprivate var nodesStorage: Dictionary<TypeCard, SCNNode> = [:]
     
     fileprivate var currentType: TypeCard = .unknow
     
@@ -81,8 +108,9 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     }
     
     deinit {
-        bussinesCardHorizontalFacialSide?.flushFromMemory()
+        bussinesCardHorizontalFaceSide?.flushFromMemory()
         bussinesCardHorizontalFlipSide?.flushFromMemory()
+        bussinesCardVertical?.flushFromMemory()
     }
     
     // I N T E R N A L   M E T H O D S
@@ -104,9 +132,9 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
         updateQueue.async { [weak self] in
-            
-            self?.bussinesCardHorizontalFacialSide = BusinessCard(type: .horizontal)
-            self?.bussinesCardHorizontalFlipSide = BusinessCard(type: .horizontal)
+            self?.bussinesCardHorizontalFaceSide = BusinessCard(type: .horizontal, webView: webView)
+            self?.bussinesCardHorizontalFlipSide = BusinessCard(type: .horizontal, webView: webView)
+            self?.bussinesCardVertical = BusinessCard(type: .vertical, webView: webView)
         }
     }
     
@@ -115,44 +143,38 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     }
     
     func touchOccurred(nodeName: String) {
-        debugPrint("Touched node name - \(nodeName)")
-        var urlString: String?
         
-        switch nodeName {
-            case IncodeLinkButton.button_linkedin.rawValue:
-            urlString = "https://www.linkedin.com/company/incode-group"
-            case IncodeLinkButton.button_facebook.rawValue:
-            urlString = "https://www.facebook.com/incode.group/"
-            case IncodeLinkButton.button_twitter.rawValue:
-            urlString = "https://twitter.com/incode_group"
-            case IncodeLinkButton.button_instagram.rawValue:
-            urlString = "https://www.instagram.com/incode_group/"
-        case IncodeLinkButton.button_pillboxed.rawValue:
-            urlString = "https://incode-group.com/blockchain-healthcare-industry-project"
-            case IncodeLinkButton.button_glustory.rawValue:
-            urlString = "https://incode-group.com/project-clustory"
-        case IncodeLinkButton.button_cryptonymous.rawValue:
-            urlString = "https://incode-group.com/crypto-exchange-platform-cryptonymous"
-            case IncodeLinkButton.button_insake.rawValue:
-            urlString = "https://incode-group.com/iot-marketplace-insake"
-        default:
-            break
-        }
-
-        if let url = urlString {
-            let request = URLRequest(url: URL(string: url)!)
-           
+        if nodeName == "VideoPlane" {
+            
             switch currentType {
-            case .faceSide:
-                bussinesCardHorizontalFacialSide?.loadRequest(_request: request)
-            case .flipSide:
-                bussinesCardHorizontalFlipSide?.loadRequest(_request: request)
+            case .horizontalFaceSide:
+                bussinesCardHorizontalFaceSide?.continuePlayingTheTemplateVideo()
+            case .horizontalFlipSideKravchenko, .horizontalFlipSideGrebenataya:
+                bussinesCardHorizontalFlipSide?.continuePlayingTheTemplateVideo()
+            case .verticalMeleshko, .verticalGerasymenko:
+                bussinesCardVertical?.continuePlayingTheTemplateVideo()
             case .unknow:
                 return
-            }  
+            }
+            
+            return
+        }
+        
+        guard let url = IncodeLinkButton(rawValue: nodeName)?.link() else { return }
+        
+        let request = URLRequest(url: URL(string: url)!)
+        
+        switch currentType {
+        case .horizontalFaceSide:
+            bussinesCardHorizontalFaceSide?.loadRequest(_request: request)
+        case .horizontalFlipSideKravchenko, .horizontalFlipSideGrebenataya:
+            bussinesCardHorizontalFlipSide?.loadRequest(_request: request)
+        case .verticalMeleshko, .verticalGerasymenko:
+            bussinesCardVertical?.loadRequest(_request: request)
+        case .unknow:
+            return
         }
     }
-    
 }
 
 extension CardScanArKitController: ARSCNViewDelegate {
@@ -180,17 +202,21 @@ extension CardScanArKitController: ARSCNViewDelegate {
             
             guard let imageName = imageAnchor.referenceImage.name else { return }
             
-            
             let mainPlane = SCNPlane(width: physicalWidth, height: physicalHeight)
+            
+            self.currentType = TypeCard(rawValue: imageName) ?? .unknow
             
             var businessCard: BusinessCard?
             
-            switch imageName {
-            case TypeCard.faceSide.rawValue :
-                businessCard = self.bussinesCardHorizontalFacialSide
-            case TypeCard.flipSide.rawValue:
+            switch self.currentType {
+            case .horizontalFaceSide :
+                businessCard = self.bussinesCardHorizontalFaceSide
+            case .horizontalFlipSideKravchenko, .horizontalFlipSideGrebenataya:
                 businessCard = self.bussinesCardHorizontalFlipSide
-            default: return
+            case .verticalMeleshko, .verticalGerasymenko:
+                businessCard = self.bussinesCardVertical
+            case .unknow:
+                return
             }
             
             guard let card = businessCard else { return }
@@ -201,12 +227,18 @@ extension CardScanArKitController: ARSCNViewDelegate {
             imageHightingAnimationNode.opacity = 0.25
             node.addChildNode(imageHightingAnimationNode)
             
+            node.addChildNode(card)
+            
+            //save node
+            self.nodesStorage[self.currentType] = node;
+            
             imageHightingAnimationNode.runAction(self.imageHighlightAction) {
-                    node.addChildNode(card)
+                if card.type == .horizontal {
+                    card.playTheTemplateVideoFromTheBegining()
+                }
             }
         }
     }
-    
 }
 
 extension CardScanArKitController: ARSessionDelegate {
@@ -217,25 +249,32 @@ extension CardScanArKitController: ARSessionDelegate {
             
             if let imageAnchor = anchor as? ARImageAnchor{
                 
-                guard let nameImage = imageAnchor.referenceImage.name else { return }
+                guard let imageName = imageAnchor.referenceImage.name else { return }
                 
                 guard imageAnchor.isTracked else {
                     currentType = .unknow
                     return
                 }
                 
-                switch nameImage {
-                case TypeCard.faceSide.rawValue:
-                    currentType = .faceSide
-                case TypeCard.flipSide.rawValue:
-                    currentType = .flipSide
-                default: currentType = .unknow
-                }
-               
+                self.currentType = TypeCard(rawValue: imageName) ?? .unknow
                 
+                var businessCard: BusinessCard?
+                
+                switch self.currentType {
+                case .horizontalFaceSide :
+                    businessCard = self.bussinesCardHorizontalFaceSide
+                case .horizontalFlipSideKravchenko, .horizontalFlipSideGrebenataya:
+                    businessCard = self.bussinesCardHorizontalFlipSide
+                case .verticalMeleshko, .verticalGerasymenko:
+                    businessCard = self.bussinesCardVertical
+                case .unknow:
+                    return
+                }
+                
+                guard let card = businessCard, let node = nodesStorage[self.currentType] else { return }
+                node.addChildNode(card)
             }
         }
     }
     
 }
-

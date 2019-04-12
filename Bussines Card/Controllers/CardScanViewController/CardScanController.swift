@@ -9,7 +9,6 @@
 import UIKit
 
 protocol CardScanControllerProtocol: NSObjectProtocol {
-    var employee: Employee? {get }
     var webView: UIWebView {get}
     var arKitController: CardScanArKitControllerProtocol? {get set}
     
@@ -27,24 +26,13 @@ class CardScanController: NSObject, CardScanControllerProtocol {
     
     var arKitController: CardScanArKitControllerProtocol?
     
-    var employee: Employee? {
-        didSet {
-            guard let jobLink = employee?.jobLink,
-                let url = URL(string: jobLink)  else { return }
-            
-            let request = URLRequest(url: url )
-            webView.loadRequest(request)
-        }
-    }
-    
     fileprivate(set) var webView: UIWebView
 
     // L I F E   C Y C L E
     // MARK: - Life Cycle
     
-    init(employee: Employee?, webView: UIWebView) {
+    init(webView: UIWebView) {
         self.webView = webView
-        self.employee = employee
         super.init()
     }
 

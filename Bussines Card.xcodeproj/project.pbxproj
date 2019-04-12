@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		880048052239240500E12E01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880048042239240500E12E01 /* Extensions.swift */; };
 		88077995223F8A23005363DD /* ARKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88077994223F8A23005363DD /* ARKitHelper.swift */; };
+		8810A5382255F0B5002125F9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810A5372255F0B5002125F9 /* MenuViewController.swift */; };
+		8810A53C2255F7B2002125F9 /* Logo Animation Slow.apng in Resources */ = {isa = PBXBuildFile; fileRef = 8810A53B2255F7B2002125F9 /* Logo Animation Slow.apng */; };
+		8810A53E2255FAD3002125F9 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8810A53D2255FAD3002125F9 /* MenuViewController.storyboard */; };
+		8810A540225622D8002125F9 /* Logo Animation Fast.apng in Resources */ = {isa = PBXBuildFile; fileRef = 8810A53F225622D7002125F9 /* Logo Animation Fast.apng */; };
+		8814DD57225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8814DD56225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png */; };
 		881733482241042700A93009 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733452241042700A93009 /* AVPlayerView.swift */; };
 		881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733462241042700A93009 /* AlphaFrameFilter.swift */; };
 		8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733472241042700A93009 /* AlphaPlayerViewController.swift */; };
-		8817334C2241088900A93009 /* Vertical - vertical duplication.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */; };
-		882E7134223A756B003F12EC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E7133223A756B003F12EC /* Employee.swift */; };
+		8821162E225C96EE00A112CC /* Logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8821162D225C96EE00A112CC /* Logo.mp4 */; };
+		88211630225CB8B200A112CC /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8821162F225CB8B200A112CC /* VideoView.swift */; };
 		8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2722368DBC00D3CC05 /* AppDelegate.swift */; };
 		8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */; };
 		8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED2B22368DBC00D3CC05 /* Main.storyboard */; };
@@ -21,17 +26,13 @@
 		8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */; };
 		8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */; };
 		8842ED452236983400D3CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED442236983400D3CC05 /* Assets.xcassets */; };
-		88D57E7722533FF40075E08D /* ChoiceEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D57E6C22533FF40075E08D /* ChoiceEmployee.storyboard */; };
-		88D57E7822533FF40075E08D /* ChoiceEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E6D22533FF40075E08D /* ChoiceEmployeeController.swift */; };
-		88D57E7922533FF40075E08D /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E6F22533FF40075E08D /* EmployeeCollectionViewCell.swift */; };
-		88D57E7A22533FF40075E08D /* EmployeeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D57E7022533FF40075E08D /* EmployeeCollectionViewCell.xib */; };
-		88D57E7B22533FF40075E08D /* ChoiceEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7122533FF40075E08D /* ChoiceEmployeeViewController.swift */; };
 		88D57E7C22533FF40075E08D /* CardScanArKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7322533FF40075E08D /* CardScanArKitController.swift */; };
 		88D57E7D22533FF40075E08D /* CardScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D57E7422533FF40075E08D /* CardScanViewController.storyboard */; };
 		88D57E7E22533FF40075E08D /* CardScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7522533FF40075E08D /* CardScanController.swift */; };
 		88D57E7F22533FF40075E08D /* CardScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7622533FF40075E08D /* CardScanViewController.swift */; };
 		88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E5AED0223BEB4C00AE9F70 /* scn.scnassets */; };
 		88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */; };
+		88F3EA74225B7F37002B3010 /* Logo Animation Horizontal Fast.apng in Resources */ = {isa = PBXBuildFile; fileRef = 88F3EA73225B7F37002B3010 /* Logo Animation Horizontal Fast.apng */; };
 		B32826C475017ACC72E8A2C1 /* Pods_Bussines_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ED93E33FEBC8AF16D6EEEF /* Pods_Bussines_Card.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,11 +41,16 @@
 		60ED93E33FEBC8AF16D6EEEF /* Pods_Bussines_Card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bussines_Card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		880048042239240500E12E01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		88077994223F8A23005363DD /* ARKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitHelper.swift; sourceTree = "<group>"; };
+		8810A5372255F0B5002125F9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8810A53B2255F7B2002125F9 /* Logo Animation Slow.apng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Logo Animation Slow.apng"; sourceTree = "<group>"; };
+		8810A53D2255FAD3002125F9 /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
+		8810A53F225622D7002125F9 /* Logo Animation Fast.apng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Logo Animation Fast.apng"; sourceTree = "<group>"; };
+		8814DD56225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2019-04-11 at 4.42.48 PM.png"; sourceTree = "<group>"; };
 		881733452241042700A93009 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		881733462241042700A93009 /* AlphaFrameFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaFrameFilter.swift; sourceTree = "<group>"; };
 		881733472241042700A93009 /* AlphaPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaPlayerViewController.swift; sourceTree = "<group>"; };
-		8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vertical - vertical duplication.mp4"; sourceTree = "<group>"; };
-		882E7133223A756B003F12EC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		8821162D225C96EE00A112CC /* Logo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Logo.mp4; sourceTree = "<group>"; };
+		8821162F225CB8B200A112CC /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		8842ED2422368DBC00D3CC05 /* Bussines Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bussines Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842ED2722368DBC00D3CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
@@ -54,17 +60,13 @@
 		8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+Interactor.swift"; sourceTree = "<group>"; };
 		8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+delegate.swift"; sourceTree = "<group>"; };
 		8842ED442236983400D3CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		88D57E6C22533FF40075E08D /* ChoiceEmployee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChoiceEmployee.storyboard; sourceTree = "<group>"; };
-		88D57E6D22533FF40075E08D /* ChoiceEmployeeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceEmployeeController.swift; sourceTree = "<group>"; };
-		88D57E6F22533FF40075E08D /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
-		88D57E7022533FF40075E08D /* EmployeeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeCollectionViewCell.xib; sourceTree = "<group>"; };
-		88D57E7122533FF40075E08D /* ChoiceEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceEmployeeViewController.swift; sourceTree = "<group>"; };
 		88D57E7322533FF40075E08D /* CardScanArKitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanArKitController.swift; sourceTree = "<group>"; };
 		88D57E7422533FF40075E08D /* CardScanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CardScanViewController.storyboard; sourceTree = "<group>"; };
 		88D57E7522533FF40075E08D /* CardScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanController.swift; sourceTree = "<group>"; };
 		88D57E7622533FF40075E08D /* CardScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanViewController.swift; sourceTree = "<group>"; };
 		88E5AED0223BEB4C00AE9F70 /* scn.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = scn.scnassets; sourceTree = "<group>"; };
 		88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
+		88F3EA73225B7F37002B3010 /* Logo Animation Horizontal Fast.apng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Logo Animation Horizontal Fast.apng"; sourceTree = "<group>"; };
 		8AB3A72B404ED78C0248C6E3 /* Pods-Bussines Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bussines Card.debug.xcconfig"; path = "Target Support Files/Pods-Bussines Card/Pods-Bussines Card.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,8 +108,18 @@
 				880048042239240500E12E01 /* Extensions.swift */,
 				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
 				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
+				8821162F225CB8B200A112CC /* VideoView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8810A5362255F015002125F9 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8810A5372255F0B5002125F9 /* MenuViewController.swift */,
+				8810A53D2255FAD3002125F9 /* MenuViewController.storyboard */,
+			);
+			path = MenuViewController;
 			sourceTree = "<group>";
 		};
 		88173344224103E100A93009 /* AlphaVideoViewController */ = {
@@ -118,14 +130,6 @@
 				881733472241042700A93009 /* AlphaPlayerViewController.swift */,
 			);
 			path = AlphaVideoViewController;
-			sourceTree = "<group>";
-		};
-		882E7135223A7570003F12EC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				882E7133223A756B003F12EC /* Employee.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		8842ED1B22368DBC00D3CC05 = {
@@ -152,7 +156,6 @@
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
 				88D57E6A22533FF40075E08D /* Controllers */,
 				88D57E6722533CD50075E08D /* ArKit */,
-				882E7135223A7570003F12EC /* Models */,
 				88D57E8022533FFF0075E08D /* Resources */,
 				88077993223F8A0F005363DD /* Helpers */,
 			);
@@ -163,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				88E5AED0223BEB4C00AE9F70 /* scn.scnassets */,
-				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
 			);
 			path = ArKit;
 			sourceTree = "<group>";
@@ -181,38 +183,19 @@
 		88D57E6A22533FF40075E08D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8810A5362255F015002125F9 /* MenuViewController */,
 				88D57E7222533FF40075E08D /* CardScanViewController */,
-				88D57E6B22533FF40075E08D /* ChoiceEmployeeViewController */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		88D57E6B22533FF40075E08D /* ChoiceEmployeeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				88D57E6C22533FF40075E08D /* ChoiceEmployee.storyboard */,
-				88D57E6D22533FF40075E08D /* ChoiceEmployeeController.swift */,
-				88D57E7122533FF40075E08D /* ChoiceEmployeeViewController.swift */,
-				88D57E6E22533FF40075E08D /* Views */,
-			);
-			path = ChoiceEmployeeViewController;
-			sourceTree = "<group>";
-		};
-		88D57E6E22533FF40075E08D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				88D57E6F22533FF40075E08D /* EmployeeCollectionViewCell.swift */,
-				88D57E7022533FF40075E08D /* EmployeeCollectionViewCell.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		88D57E7222533FF40075E08D /* CardScanViewController */ = {
 			isa = PBXGroup;
 			children = (
+				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
+				88D57E7622533FF40075E08D /* CardScanViewController.swift */,
 				88D57E7322533FF40075E08D /* CardScanArKitController.swift */,
 				88D57E7522533FF40075E08D /* CardScanController.swift */,
-				88D57E7622533FF40075E08D /* CardScanViewController.swift */,
 				88D57E7422533FF40075E08D /* CardScanViewController.storyboard */,
 			);
 			path = CardScanViewController;
@@ -221,7 +204,11 @@
 		88D57E8022533FFF0075E08D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8817334B2241088900A93009 /* Vertical - vertical duplication.mp4 */,
+				8814DD56225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png */,
+				8821162D225C96EE00A112CC /* Logo.mp4 */,
+				8810A53F225622D7002125F9 /* Logo Animation Fast.apng */,
+				8810A53B2255F7B2002125F9 /* Logo Animation Slow.apng */,
+				88F3EA73225B7F37002B3010 /* Logo Animation Horizontal Fast.apng */,
 				8842ED3322368DBC00D3CC05 /* Info.plist */,
 				8842ED442236983400D3CC05 /* Assets.xcassets */,
 			);
@@ -296,14 +283,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8810A53E2255FAD3002125F9 /* MenuViewController.storyboard in Resources */,
 				8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */,
-				88D57E7722533FF40075E08D /* ChoiceEmployee.storyboard in Resources */,
+				8810A53C2255F7B2002125F9 /* Logo Animation Slow.apng in Resources */,
 				88D57E7D22533FF40075E08D /* CardScanViewController.storyboard in Resources */,
+				8821162E225C96EE00A112CC /* Logo.mp4 in Resources */,
+				8814DD57225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png in Resources */,
 				8842ED452236983400D3CC05 /* Assets.xcassets in Resources */,
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
+				8810A540225622D8002125F9 /* Logo Animation Fast.apng in Resources */,
 				88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */,
-				8817334C2241088900A93009 /* Vertical - vertical duplication.mp4 in Resources */,
-				88D57E7A22533FF40075E08D /* EmployeeCollectionViewCell.xib in Resources */,
+				88F3EA74225B7F37002B3010 /* Logo Animation Horizontal Fast.apng in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,21 +352,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */,
-				882E7134223A756B003F12EC /* Employee.swift in Sources */,
 				88077995223F8A23005363DD /* ARKitHelper.swift in Sources */,
 				881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */,
+				8810A5382255F0B5002125F9 /* MenuViewController.swift in Sources */,
 				8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */,
 				88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */,
+				88211630225CB8B200A112CC /* VideoView.swift in Sources */,
 				88D57E7E22533FF40075E08D /* CardScanController.swift in Sources */,
 				881733482241042700A93009 /* AVPlayerView.swift in Sources */,
 				88D57E7C22533FF40075E08D /* CardScanArKitController.swift in Sources */,
-				88D57E7B22533FF40075E08D /* ChoiceEmployeeViewController.swift in Sources */,
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
 				88D57E7F22533FF40075E08D /* CardScanViewController.swift in Sources */,
-				88D57E7822533FF40075E08D /* ChoiceEmployeeController.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,
-				88D57E7922533FF40075E08D /* EmployeeCollectionViewCell.swift in Sources */,
 				880048052239240500E12E01 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,9 +512,9 @@
 			baseConfigurationReference = 8AB3A72B404ED78C0248C6E3 /* Pods-Bussines Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3JC64BVWLY;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GVL7Z7NM83;
 				INFOPLIST_FILE = "$(SRCROOT)/Bussines Card/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,7 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incode-group.ar-business-card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Incode Group AR Business Card";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -545,9 +533,9 @@
 			baseConfigurationReference = 12AE82BDBD79B488F41A5D48 /* Pods-Bussines Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3JC64BVWLY;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GVL7Z7NM83;
 				INFOPLIST_FILE = "$(SRCROOT)/Bussines Card/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,7 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incode-group.ar-business-card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Incode Group AR Business Card";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
