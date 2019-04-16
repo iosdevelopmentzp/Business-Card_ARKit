@@ -39,9 +39,8 @@ class BusinessCard: SCNNode {
     // L I F E   C Y C L E
     // MARK: - Life Cycle
     
-    init(type: CardType, webView: UIWebView) {
+    init(type: CardType) {
         self.type = type
-        //self.webView = webView
         super.init()
         
         switch type {

@@ -9,12 +9,12 @@
 import UIKit
 
 protocol CardScanControllerProtocol: NSObjectProtocol {
-    var webView: UIWebView {get}
     var arKitController: CardScanArKitControllerProtocol? {get set}
     
     func startScan()
     func pauseScan()
     func touchOccurred(nodeName: String)
+    func loadUrl(_ url: URL)
 }
 
 class CardScanController: NSObject, CardScanControllerProtocol {
@@ -25,24 +25,14 @@ class CardScanController: NSObject, CardScanControllerProtocol {
     // MARK: - Internal Properties
     
     var arKitController: CardScanArKitControllerProtocol?
-    
-    fileprivate(set) var webView: UIWebView
-
-    // L I F E   C Y C L E
-    // MARK: - Life Cycle
-    
-    init(webView: UIWebView) {
-        self.webView = webView
-        super.init()
-    }
-
+    var viewController: CardScanViewController?
     
     
     // I N T E R N A L   M E T H O D S
     // MARK: - Internal Methods
     
     func startScan() {
-        arKitController?.setupARSession(webView: webView)
+        arKitController?.setupARSession()
     }
     
     func pauseScan() {
@@ -51,5 +41,9 @@ class CardScanController: NSObject, CardScanControllerProtocol {
     
     func touchOccurred(nodeName: String) {
         arKitController?.touchOccurred(nodeName: nodeName)
+    }
+    
+    func loadUrl(_ url: URL) {
+        viewController?.loadUrl(url)
     }
 }

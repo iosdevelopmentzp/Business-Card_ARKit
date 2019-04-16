@@ -61,11 +61,19 @@ class CardScanViewController: UIViewController {
     }
     
     fileprivate func getScanController() -> CardScanController {
-        let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 770))
-        let request = URLRequest(url: URL(string: "https://incode-group.com/about")!)
-        webView.loadRequest(request)
-        let controller = CardScanController(webView: webView)
+        let controller = CardScanController()
+        controller.viewController = self
         return controller
+    }
+    
+    // I N T E R N A L   M E T H O D S
+    // MARK: - Internal Methods
+    
+    func loadUrl(_ url: URL) {
+        guard let pulleyController = pulleyViewController as? BrowserProtocol
+            else { return }
+        
+        pulleyController.loadUrl(url: url)
     }
     
     // U S E R  I N T E R A C T I O N

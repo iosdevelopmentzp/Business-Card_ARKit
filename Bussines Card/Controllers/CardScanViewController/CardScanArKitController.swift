@@ -52,7 +52,7 @@ protocol CardScanArKitControllerProtocol: NSObjectProtocol {
     var sceneView: ARSCNView {get set}
     var delegate: CardScanArKitControllerDelegate? {get set}
     
-    func setupARSession(webView: UIWebView)
+    func setupARSession()
     func pauseSession()
     func touchOccurred(nodeName: String)
 }
@@ -115,7 +115,7 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
     
     // I N T E R N A L   M E T H O D S
     // MARK: - Internal Methods
-    func setupARSession (webView: UIWebView) {
+    func setupARSession () {
         
         //1. Setup Our Tracking Images
         guard let trackingImages =  ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
@@ -132,9 +132,9 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
         updateQueue.async { [weak self] in
-            self?.bussinesCardHorizontalFaceSide = BusinessCard(type: .horizontal, webView: webView)
-            self?.bussinesCardHorizontalFlipSide = BusinessCard(type: .horizontal, webView: webView)
-            self?.bussinesCardVertical = BusinessCard(type: .vertical, webView: webView)
+            self?.bussinesCardHorizontalFaceSide = BusinessCard(type: .horizontal)
+            self?.bussinesCardHorizontalFlipSide = BusinessCard(type: .horizontal)
+            self?.bussinesCardVertical = BusinessCard(type: .vertical)
         }
     }
     
@@ -160,10 +160,23 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
             return
         }
         
-        guard let url = IncodeLinkButton(rawValue: nodeName)?.link() else { return }
         
-        let request = URLRequest(url: URL(string: url)!)
+        guard let linkButton = IncodeLinkButton(rawValue: nodeName) else { return }
         
+        let url = URL(string: linkButton.link())!
+        let request = URLRequest(url: url)
+        
+        
+        // if social links open in native browser
+        switch linkButton {
+        case .button_facebook, .button_instagram, .button_linkedin, .button_twitter:
+            cardScanController?.loadUrl(url)
+            return
+        default:
+            break
+        }
+        
+        // if other links open in ArKit browser
         switch currentType {
         case .horizontalFaceSide:
             bussinesCardHorizontalFaceSide?.loadRequest(_request: request)

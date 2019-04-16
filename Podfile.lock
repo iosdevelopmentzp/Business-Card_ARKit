@@ -1,20 +1,16 @@
 PODS:
   - APNGKit (1.1.0)
-  - Pulley (2.5.0)
 
 DEPENDENCIES:
   - APNGKit
-  - Pulley (~> 2.5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - APNGKit
-    - Pulley
 
 SPEC CHECKSUMS:
   APNGKit: 8fcf50c4004d6d01473707412d162e90d1fa599a
-  Pulley: cd351f605ec2e7412c69d39313c49f99dd1f97c1
 
-PODFILE CHECKSUM: 9bcbc5455306f7da8e97c33155c2c1a9495e3f78
+PODFILE CHECKSUM: 6e9ac6e626e6ec583a1fb881bd0ca9267fa10c23
 
 COCOAPODS: 1.6.1

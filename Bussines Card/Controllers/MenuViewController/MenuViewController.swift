@@ -8,6 +8,7 @@
 
 import UIKit
 import APNGKit
+import SafariServices
 
 
 class MenuViewController: UIViewController {
@@ -85,13 +86,24 @@ class MenuViewController: UIViewController {
     }
     
     fileprivate func pushCardScanController() {
+        
+        guard let scanViewController = self.scanViewController else { return }
+        
+        let safariVC = SafariViewController()
+        
+        let pulleyViewController = MainPulleyViewController.init(contentViewController: scanViewController, drawerViewController: safariVC )
+        
+        pulleyViewController.initialDrawerPosition = .closed
+        pulleyViewController.animationDelay = 0.1
+        pulleyViewController.animationDuration = 0.5
+        pulleyViewController.drawerTopInset = UIScreen.main.bounds.height * 0.1
 
-        UIView.animate(withDuration: 0.4, animations: { [weak self] in
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
             self?.animateView.alpha = 0.0
             self?.labelImage.alpha = 0.0
         }) { [weak self] (_) in
-            guard let scanViewController = self?.scanViewController else { return }
-            self?.navigationController?.pushViewController(scanViewController, animated: false)
+        
+            self?.navigationController?.pushViewController(pulleyViewController, animated: false)
         }
         
     }

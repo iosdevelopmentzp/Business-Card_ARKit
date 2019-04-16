@@ -17,6 +17,9 @@
 		881733482241042700A93009 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733452241042700A93009 /* AVPlayerView.swift */; };
 		881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733462241042700A93009 /* AlphaFrameFilter.swift */; };
 		8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733472241042700A93009 /* AlphaPlayerViewController.swift */; };
+		881D2A9A2265C0E70033E8A7 /* CardScanSafariController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881D2A982265C0E70033E8A7 /* CardScanSafariController.swift */; };
+		881D2A9B2265C0E70033E8A7 /* MainPulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881D2A992265C0E70033E8A7 /* MainPulleyViewController.swift */; };
+		881D2A9D2265C1E30033E8A7 /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881D2A9C2265C1E30033E8A7 /* SafariViewController.swift */; };
 		8821162E225C96EE00A112CC /* Logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8821162D225C96EE00A112CC /* Logo.mp4 */; };
 		88211630225CB8B200A112CC /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8821162F225CB8B200A112CC /* VideoView.swift */; };
 		8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2722368DBC00D3CC05 /* AppDelegate.swift */; };
@@ -26,6 +29,10 @@
 		8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */; };
 		8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */; };
 		8842ED452236983400D3CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED442236983400D3CC05 /* Assets.xcassets */; };
+		88ABF2492265E30D0019E9F6 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABF2452265E30D0019E9F6 /* PulleyViewController.swift */; };
+		88ABF24A2265E30D0019E9F6 /* UIViewController+PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABF2462265E30D0019E9F6 /* UIViewController+PulleyViewController.swift */; };
+		88ABF24B2265E30D0019E9F6 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABF2472265E30D0019E9F6 /* PulleyPassthroughScrollView.swift */; };
+		88ABF24C2265E30D0019E9F6 /* UIView+constrainToParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABF2482265E30D0019E9F6 /* UIView+constrainToParent.swift */; };
 		88D57E7C22533FF40075E08D /* CardScanArKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7322533FF40075E08D /* CardScanArKitController.swift */; };
 		88D57E7D22533FF40075E08D /* CardScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D57E7422533FF40075E08D /* CardScanViewController.storyboard */; };
 		88D57E7E22533FF40075E08D /* CardScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7522533FF40075E08D /* CardScanController.swift */; };
@@ -49,6 +56,9 @@
 		881733452241042700A93009 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		881733462241042700A93009 /* AlphaFrameFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaFrameFilter.swift; sourceTree = "<group>"; };
 		881733472241042700A93009 /* AlphaPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaPlayerViewController.swift; sourceTree = "<group>"; };
+		881D2A982265C0E70033E8A7 /* CardScanSafariController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanSafariController.swift; sourceTree = "<group>"; };
+		881D2A992265C0E70033E8A7 /* MainPulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPulleyViewController.swift; sourceTree = "<group>"; };
+		881D2A9C2265C1E30033E8A7 /* SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		8821162D225C96EE00A112CC /* Logo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Logo.mp4; sourceTree = "<group>"; };
 		8821162F225CB8B200A112CC /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		8842ED2422368DBC00D3CC05 /* Bussines Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bussines Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +70,10 @@
 		8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+Interactor.swift"; sourceTree = "<group>"; };
 		8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+delegate.swift"; sourceTree = "<group>"; };
 		8842ED442236983400D3CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88ABF2452265E30D0019E9F6 /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
+		88ABF2462265E30D0019E9F6 /* UIViewController+PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PulleyViewController.swift"; sourceTree = "<group>"; };
+		88ABF2472265E30D0019E9F6 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
+		88ABF2482265E30D0019E9F6 /* UIView+constrainToParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constrainToParent.swift"; sourceTree = "<group>"; };
 		88D57E7322533FF40075E08D /* CardScanArKitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanArKitController.swift; sourceTree = "<group>"; };
 		88D57E7422533FF40075E08D /* CardScanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CardScanViewController.storyboard; sourceTree = "<group>"; };
 		88D57E7522533FF40075E08D /* CardScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanController.swift; sourceTree = "<group>"; };
@@ -102,6 +116,7 @@
 		88077993223F8A0F005363DD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				88ABF2442265E30D0019E9F6 /* PulleyLib */,
 				88D57E6822533D200075E08D /* For example */,
 				88173344224103E100A93009 /* AlphaVideoViewController */,
 				88077994223F8A23005363DD /* ARKitHelper.swift */,
@@ -130,6 +145,16 @@
 				881733472241042700A93009 /* AlphaPlayerViewController.swift */,
 			);
 			path = AlphaVideoViewController;
+			sourceTree = "<group>";
+		};
+		881D2A972265C0B90033E8A7 /* RootPulleyController */ = {
+			isa = PBXGroup;
+			children = (
+				881D2A992265C0E70033E8A7 /* MainPulleyViewController.swift */,
+				881D2A982265C0E70033E8A7 /* CardScanSafariController.swift */,
+				881D2A9C2265C1E30033E8A7 /* SafariViewController.swift */,
+			);
+			path = RootPulleyController;
 			sourceTree = "<group>";
 		};
 		8842ED1B22368DBC00D3CC05 = {
@@ -162,6 +187,17 @@
 			path = "Bussines Card";
 			sourceTree = "<group>";
 		};
+		88ABF2442265E30D0019E9F6 /* PulleyLib */ = {
+			isa = PBXGroup;
+			children = (
+				88ABF2452265E30D0019E9F6 /* PulleyViewController.swift */,
+				88ABF2462265E30D0019E9F6 /* UIViewController+PulleyViewController.swift */,
+				88ABF2472265E30D0019E9F6 /* PulleyPassthroughScrollView.swift */,
+				88ABF2482265E30D0019E9F6 /* UIView+constrainToParent.swift */,
+			);
+			path = PulleyLib;
+			sourceTree = "<group>";
+		};
 		88D57E6722533CD50075E08D /* ArKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				8810A5362255F015002125F9 /* MenuViewController */,
+				881D2A972265C0B90033E8A7 /* RootPulleyController */,
 				88D57E7222533FF40075E08D /* CardScanViewController */,
 			);
 			path = Controllers;
@@ -310,14 +347,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bussines Card/Pods-Bussines Card-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APNGKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -355,15 +390,22 @@
 			files = (
 				8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */,
 				88077995223F8A23005363DD /* ARKitHelper.swift in Sources */,
+				881D2A9A2265C0E70033E8A7 /* CardScanSafariController.swift in Sources */,
 				881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */,
+				881D2A9B2265C0E70033E8A7 /* MainPulleyViewController.swift in Sources */,
 				8810A5382255F0B5002125F9 /* MenuViewController.swift in Sources */,
 				8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */,
 				88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */,
+				88ABF24A2265E30D0019E9F6 /* UIViewController+PulleyViewController.swift in Sources */,
+				88ABF24B2265E30D0019E9F6 /* PulleyPassthroughScrollView.swift in Sources */,
 				88211630225CB8B200A112CC /* VideoView.swift in Sources */,
 				88D57E7E22533FF40075E08D /* CardScanController.swift in Sources */,
+				881D2A9D2265C1E30033E8A7 /* SafariViewController.swift in Sources */,
 				881733482241042700A93009 /* AVPlayerView.swift in Sources */,
 				88D57E7C22533FF40075E08D /* CardScanArKitController.swift in Sources */,
+				88ABF2492265E30D0019E9F6 /* PulleyViewController.swift in Sources */,
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
+				88ABF24C2265E30D0019E9F6 /* UIView+constrainToParent.swift in Sources */,
 				88D57E7F22533FF40075E08D /* CardScanViewController.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,
