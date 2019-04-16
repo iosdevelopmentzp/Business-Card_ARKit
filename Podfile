@@ -8,4 +8,5 @@ target 'Bussines Card' do
   # Pods for Bussines Card
 
 pod 'APNGKit'
+pod 'Pulley', '~>2.5.0'
 end

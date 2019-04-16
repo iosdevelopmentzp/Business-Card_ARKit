@@ -19,18 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="RvA-nF-GT9">
-                                <rect key="frame" x="50" y="505" width="275" height="62"/>
+                                <rect key="frame" x="100" y="462" width="175" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="RvA-nF-GT9" secondAttribute="height" multiplier="221:50" id="Qr2-4n-L6z"/>
+                                    <constraint firstAttribute="width" secondItem="RvA-nF-GT9" secondAttribute="height" multiplier="175:67" id="PGn-Fa-AzT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078431372548" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RvA-nF-GT9" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="HG4-LO-4yg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RvA-nF-GT9" secondAttribute="bottom" constant="100" id="Isk-l1-ydS"/>
-                            <constraint firstItem="RvA-nF-GT9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="S1P-lf-Nv8"/>
-                            <constraint firstAttribute="trailing" secondItem="RvA-nF-GT9" secondAttribute="trailing" constant="50" id="dyy-4k-wIT"/>
+                            <constraint firstItem="RvA-nF-GT9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0CP-xP-cFn"/>
+                            <constraint firstItem="RvA-nF-GT9" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="175:667" id="OXT-G0-JKa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RvA-nF-GT9" secondAttribute="bottom" constant="138" id="c5y-yZ-tnA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

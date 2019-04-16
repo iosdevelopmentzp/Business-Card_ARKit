@@ -18,6 +18,8 @@ class MenuViewController: UIViewController {
     @IBOutlet  weak var animateView: APNGImageView!
     @IBOutlet weak var labelImage: UIImageView!
     
+    @IBOutlet weak var constraintTopAnimate: NSLayoutConstraint!
+    
     var scanViewController: UIViewController?
     
     
@@ -59,6 +61,16 @@ class MenuViewController: UIViewController {
         let identifierVC = String(describing: CardScanViewController.self)
         let scanVC = UIStoryboard.init(name: identifierVC, bundle: nil).instantiateViewController(withIdentifier: identifierVC)
         self.scanViewController = scanVC
+        
+        // constraint update
+        var newConstant = constraintTopAnimate.constant * (667 / view.bounds.height)
+        
+        if (isIphoneX()) {
+            newConstant -=  60
+        }
+        
+        constraintTopAnimate.constant = newConstant
+        view.layoutIfNeeded()
     }
     
     fileprivate func setupVideoView () {
@@ -82,6 +94,13 @@ class MenuViewController: UIViewController {
             self?.navigationController?.pushViewController(scanViewController, animated: false)
         }
         
+    }
+    
+    fileprivate func isIphoneX() -> Bool {
+        guard #available(iOS 11.0, *), let topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top, topPadding > 24 else {
+            return false
+        }
+        return true
     }
     
 }
