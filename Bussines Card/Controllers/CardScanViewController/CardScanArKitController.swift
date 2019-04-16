@@ -58,9 +58,9 @@ protocol CardScanArKitControllerProtocol: NSObjectProtocol {
 }
 
 class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
-    
     enum TypeCard: String {
         case horizontalFaceSide = "incode_horizontal_face_side"
+        case horizontalFaceSideOriginal = "incode_horizontal_face_side_original"
         case horizontalFlipSideKravchenko = "incode_horizontal_flip_side_kravchenko"
         case horizontalFlipSideGrebenataya = "incode_horizontal_flip_side_grebenataya"
         case verticalMeleshko = "incode_vertical_meleshko"
@@ -131,7 +131,7 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         sceneView.delegate = self
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
-        updateQueue.async { [weak self] in
+        updateQueue.sync { [weak self] in
             self?.bussinesCardHorizontalFaceSide = BusinessCard(type: .horizontal)
             self?.bussinesCardHorizontalFlipSide = BusinessCard(type: .horizontal)
             self?.bussinesCardVertical = BusinessCard(type: .vertical)
@@ -147,7 +147,7 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         if nodeName == "VideoPlane" {
             
             switch currentType {
-            case .horizontalFaceSide:
+            case .horizontalFaceSide, .horizontalFaceSideOriginal:
                 bussinesCardHorizontalFaceSide?.continuePlayingTheTemplateVideo()
             case .horizontalFlipSideKravchenko, .horizontalFlipSideGrebenataya:
                 bussinesCardHorizontalFlipSide?.continuePlayingTheTemplateVideo()
@@ -178,7 +178,7 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         
         // if other links open in ArKit browser
         switch currentType {
-        case .horizontalFaceSide:
+        case .horizontalFaceSide, .horizontalFaceSideOriginal:
             bussinesCardHorizontalFaceSide?.loadRequest(_request: request)
         case .horizontalFlipSideKravchenko, .horizontalFlipSideGrebenataya:
             bussinesCardHorizontalFlipSide?.loadRequest(_request: request)
@@ -207,14 +207,14 @@ extension CardScanArKitController: ARSCNViewDelegate {
         
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
         
-        updateQueue.async { [weak self] in
+        updateQueue.sync { [weak self] in
             guard let self = self else { return }
             
             let physicalWidth = imageAnchor.referenceImage.physicalSize.width
             let physicalHeight = imageAnchor.referenceImage.physicalSize.height
             
             guard let imageName = imageAnchor.referenceImage.name else { return }
-            
+            debugPrint(imageName)
             let mainPlane = SCNPlane(width: physicalWidth, height: physicalHeight)
             
             self.currentType = TypeCard(rawValue: imageName) ?? .unknow
@@ -222,7 +222,7 @@ extension CardScanArKitController: ARSCNViewDelegate {
             var businessCard: BusinessCard?
             
             switch self.currentType {
-            case .horizontalFaceSide :
+            case .horizontalFaceSide, .horizontalFaceSideOriginal:
                 businessCard = self.bussinesCardHorizontalFaceSide
             case .horizontalFlipSideKravchenko, .horizontalFlipSideGrebenataya:
                 businessCard = self.bussinesCardHorizontalFlipSide
@@ -274,7 +274,7 @@ extension CardScanArKitController: ARSessionDelegate {
                 var businessCard: BusinessCard?
                 
                 switch self.currentType {
-                case .horizontalFaceSide :
+                case .horizontalFaceSide, .horizontalFaceSideOriginal :
                     businessCard = self.bussinesCardHorizontalFaceSide
                 case .horizontalFlipSideKravchenko, .horizontalFlipSideGrebenataya:
                     businessCard = self.bussinesCardHorizontalFlipSide
