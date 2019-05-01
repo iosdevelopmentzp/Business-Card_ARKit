@@ -66,9 +66,6 @@ extension ARSceneViewController: ARSCNViewDelegate{
         if let name = imageAnchor.referenceImage.name {
             debugPrint("\(name) image")
         }
-        
-        let referenceImage = imageAnchor.referenceImage
-        
         animateCard(node: node, anchor: anchor)
     }
 }
