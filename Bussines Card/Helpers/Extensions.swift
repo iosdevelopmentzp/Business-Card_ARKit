@@ -24,5 +24,3 @@ extension CGFloat {
         return Double(self)
     }
 }
-
-

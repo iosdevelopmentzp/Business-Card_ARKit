@@ -15,12 +15,10 @@ protocol BrowserProtocol: NSObjectProtocol {
 
 class MainPulleyViewController: PulleyViewController, BrowserProtocol {
     
-    
-    
-    weak var safariViewController: SFSafariViewController? {
+    weak var safariViewController: SafariViewController? {
         didSet {
             guard let safariViewController = safariViewController else { return }
-            
+            safariViewController.delegate = self
             setDrawerContentViewController(controller: safariViewController)
         }
     }
@@ -36,7 +34,6 @@ class MainPulleyViewController: PulleyViewController, BrowserProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] (_) in
             self?.view.subviews.forEach{$0.isHidden = false}
         }
@@ -45,26 +42,32 @@ class MainPulleyViewController: PulleyViewController, BrowserProtocol {
     func loadUrl(url: URL) {
         
         DispatchQueue.main.async { [weak self] in
-            let safariVC = SFSafariViewController(url: url)
-            self?.safariViewController = safariVC
-            safariVC.delegate = self
-            safariVC.additionalSafeAreaInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 20, right: 0)
+            self?.safariViewController?.loadUrl(url: url)
             self?.setDrawerPosition(position: .open, animated: true)
         }
-        
-        
     }
     
     // drawer protocol
     
-    override func supportedDrawerPositions() -> [PulleyPosition] {
-        return [.closed, .open]
+
+    override func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
+        
+        guard drawer.drawerPosition != .open, drawer.drawerPosition != .closed  else { return }
+        setDrawerPosition(position: .closed, animated: true)
+    }
+    
+    override func drawerChangedDistanceFromBottom(drawer: PulleyViewController, distance: CGFloat, bottomSafeArea: CGFloat) {
+        
+        if distance == 0 {
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] (_) in
+                self?.safariViewController?.removeSafariViewControllerFromSuperView()
+            }
+        }
     }
 }
 
-extension MainPulleyViewController: SFSafariViewControllerDelegate {
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+extension MainPulleyViewController: SafariViewControllerProtocol {
+    func safariDidFinish(controller: SafariViewController) {
         setDrawerPosition(position: .closed, animated: true)
     }
 }

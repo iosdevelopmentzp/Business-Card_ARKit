@@ -89,10 +89,15 @@ class MenuViewController: UIViewController {
         
         guard let scanViewController = self.scanViewController else { return }
         
-        let safariVC = SafariViewController()
+        let safariVC = UIStoryboard.init(name: String(describing: SafariViewController.self), bundle: nil).instantiateViewController(withIdentifier: String(describing: SafariViewController.self)) as! SafariViewController
+
+        
         
         let pulleyViewController = MainPulleyViewController.init(contentViewController: scanViewController, drawerViewController: safariVC )
         
+        pulleyViewController.safariViewController = safariVC
+        
+        pulleyViewController.delegate = pulleyViewController
         pulleyViewController.initialDrawerPosition = .closed
         pulleyViewController.animationDelay = 0.1
         pulleyViewController.animationDuration = 0.5

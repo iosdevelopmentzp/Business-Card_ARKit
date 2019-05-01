@@ -76,6 +76,10 @@ class CardScanViewController: UIViewController {
         pulleyController.loadUrl(url: url)
     }
     
+    func setupARSession () {
+        arKitScanController.setupARSession()
+    }
+    
     // U S E R  I N T E R A C T I O N
     // MARK: - User Interaction
     

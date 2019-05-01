@@ -132,6 +132,11 @@ class CardScanArKitController: NSObject, CardScanArKitControllerProtocol {
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
         updateQueue.sync { [weak self] in
+            
+            guard self?.bussinesCardVertical == nil,
+                self?.bussinesCardHorizontalFaceSide == nil,
+                self?.bussinesCardHorizontalFlipSide == nil else { return }
+            
             self?.bussinesCardHorizontalFaceSide = BusinessCard(type: .horizontal)
             self?.bussinesCardHorizontalFlipSide = BusinessCard(type: .horizontal)
             self?.bussinesCardVertical = BusinessCard(type: .vertical)
