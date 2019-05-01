@@ -48,8 +48,6 @@ class SafariViewController: UIViewController, BrowserProtocol {
     
     fileprivate func loadSafariViewController (url: URL) -> SFSafariViewController {
         let configuration = SFSafariViewController.Configuration()
-        configuration.barCollapsingEnabled = false
-        configuration.entersReaderIfAvailable = true
         let controller = SFSafariViewController(url: url, configuration: configuration)
         controller.delegate = self
         addChild(controller)
