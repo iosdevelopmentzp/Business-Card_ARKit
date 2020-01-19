@@ -7,20 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880048052239240500E12E01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880048042239240500E12E01 /* Extensions.swift */; };
+		88077995223F8A23005363DD /* ARKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88077994223F8A23005363DD /* ARKitHelper.swift */; };
+		8810A5382255F0B5002125F9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810A5372255F0B5002125F9 /* MenuViewController.swift */; };
+		8810A53C2255F7B2002125F9 /* Logo Animation Slow.apng in Resources */ = {isa = PBXBuildFile; fileRef = 8810A53B2255F7B2002125F9 /* Logo Animation Slow.apng */; };
+		8810A53E2255FAD3002125F9 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8810A53D2255FAD3002125F9 /* MenuViewController.storyboard */; };
+		8810A540225622D8002125F9 /* Logo Animation Fast.apng in Resources */ = {isa = PBXBuildFile; fileRef = 8810A53F225622D7002125F9 /* Logo Animation Fast.apng */; };
+		8814DD57225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8814DD56225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png */; };
+		881733482241042700A93009 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733452241042700A93009 /* AVPlayerView.swift */; };
+		881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733462241042700A93009 /* AlphaFrameFilter.swift */; };
+		8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881733472241042700A93009 /* AlphaPlayerViewController.swift */; };
+		881D2A9A2265C0E70033E8A7 /* CardScanSafariController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881D2A982265C0E70033E8A7 /* CardScanSafariController.swift */; };
+		881D2A9B2265C0E70033E8A7 /* MainPulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881D2A992265C0E70033E8A7 /* MainPulleyViewController.swift */; };
+		881D2A9D2265C1E30033E8A7 /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881D2A9C2265C1E30033E8A7 /* SafariViewController.swift */; };
+		8821162E225C96EE00A112CC /* Logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8821162D225C96EE00A112CC /* Logo.mp4 */; };
+		88211630225CB8B200A112CC /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8821162F225CB8B200A112CC /* VideoView.swift */; };
 		8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2722368DBC00D3CC05 /* AppDelegate.swift */; };
 		8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */; };
 		8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED2B22368DBC00D3CC05 /* Main.storyboard */; };
 		8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */; };
 		8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */; };
 		8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */; };
-		8842ED3F223696B800D3CC05 /* BussinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED3E223696B800D3CC05 /* BussinessCard.swift */; };
-		8842ED41223696C800D3CC05 /* BusinessCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842ED40223696C800D3CC05 /* BusinessCardData.swift */; };
-		8842ED432236980800D3CC05 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED422236980800D3CC05 /* art.scnassets */; };
 		8842ED452236983400D3CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED442236983400D3CC05 /* Assets.xcassets */; };
-		8842ED4722369B2200D3CC05 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8842ED4622369B2200D3CC05 /* Fonts */; };
+		884AD29B22733BA200DF08D8 /* SafariViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884AD29A22733BA200DF08D8 /* SafariViewController.storyboard */; };
+		88ABF2492265E30D0019E9F6 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABF2452265E30D0019E9F6 /* PulleyViewController.swift */; };
+		88ABF24A2265E30D0019E9F6 /* UIViewController+PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABF2462265E30D0019E9F6 /* UIViewController+PulleyViewController.swift */; };
+		88ABF24B2265E30D0019E9F6 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABF2472265E30D0019E9F6 /* PulleyPassthroughScrollView.swift */; };
+		88ABF24C2265E30D0019E9F6 /* UIView+constrainToParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABF2482265E30D0019E9F6 /* UIView+constrainToParent.swift */; };
+		88D57E7C22533FF40075E08D /* CardScanArKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7322533FF40075E08D /* CardScanArKitController.swift */; };
+		88D57E7D22533FF40075E08D /* CardScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D57E7422533FF40075E08D /* CardScanViewController.storyboard */; };
+		88D57E7E22533FF40075E08D /* CardScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7522533FF40075E08D /* CardScanController.swift */; };
+		88D57E7F22533FF40075E08D /* CardScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D57E7622533FF40075E08D /* CardScanViewController.swift */; };
+		88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E5AED0223BEB4C00AE9F70 /* scn.scnassets */; };
+		88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */; };
+		88F3EA74225B7F37002B3010 /* Logo Animation Horizontal Fast.apng in Resources */ = {isa = PBXBuildFile; fileRef = 88F3EA73225B7F37002B3010 /* Logo Animation Horizontal Fast.apng */; };
+		B32826C475017ACC72E8A2C1 /* Pods_Bussines_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ED93E33FEBC8AF16D6EEEF /* Pods_Bussines_Card.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12AE82BDBD79B488F41A5D48 /* Pods-Bussines Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bussines Card.release.xcconfig"; path = "Target Support Files/Pods-Bussines Card/Pods-Bussines Card.release.xcconfig"; sourceTree = "<group>"; };
+		60ED93E33FEBC8AF16D6EEEF /* Pods_Bussines_Card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bussines_Card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		880048042239240500E12E01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		88077994223F8A23005363DD /* ARKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitHelper.swift; sourceTree = "<group>"; };
+		8810A5372255F0B5002125F9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8810A53B2255F7B2002125F9 /* Logo Animation Slow.apng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Logo Animation Slow.apng"; sourceTree = "<group>"; };
+		8810A53D2255FAD3002125F9 /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
+		8810A53F225622D7002125F9 /* Logo Animation Fast.apng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Logo Animation Fast.apng"; sourceTree = "<group>"; };
+		8814DD56225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2019-04-11 at 4.42.48 PM.png"; sourceTree = "<group>"; };
+		881733452241042700A93009 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		881733462241042700A93009 /* AlphaFrameFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaFrameFilter.swift; sourceTree = "<group>"; };
+		881733472241042700A93009 /* AlphaPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaPlayerViewController.swift; sourceTree = "<group>"; };
+		881D2A982265C0E70033E8A7 /* CardScanSafariController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanSafariController.swift; sourceTree = "<group>"; };
+		881D2A992265C0E70033E8A7 /* MainPulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPulleyViewController.swift; sourceTree = "<group>"; };
+		881D2A9C2265C1E30033E8A7 /* SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
+		8821162D225C96EE00A112CC /* Logo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Logo.mp4; sourceTree = "<group>"; };
+		8821162F225CB8B200A112CC /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		8842ED2422368DBC00D3CC05 /* Bussines Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bussines Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842ED2722368DBC00D3CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
@@ -29,11 +70,20 @@
 		8842ED3322368DBC00D3CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+Interactor.swift"; sourceTree = "<group>"; };
 		8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSceneViewController+delegate.swift"; sourceTree = "<group>"; };
-		8842ED3E223696B800D3CC05 /* BussinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BussinessCard.swift; sourceTree = "<group>"; };
-		8842ED40223696C800D3CC05 /* BusinessCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardData.swift; sourceTree = "<group>"; };
-		8842ED422236980800D3CC05 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8842ED442236983400D3CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8842ED4622369B2200D3CC05 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		884AD29A22733BA200DF08D8 /* SafariViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SafariViewController.storyboard; sourceTree = "<group>"; };
+		88ABF2452265E30D0019E9F6 /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
+		88ABF2462265E30D0019E9F6 /* UIViewController+PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PulleyViewController.swift"; sourceTree = "<group>"; };
+		88ABF2472265E30D0019E9F6 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
+		88ABF2482265E30D0019E9F6 /* UIView+constrainToParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constrainToParent.swift"; sourceTree = "<group>"; };
+		88D57E7322533FF40075E08D /* CardScanArKitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanArKitController.swift; sourceTree = "<group>"; };
+		88D57E7422533FF40075E08D /* CardScanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CardScanViewController.storyboard; sourceTree = "<group>"; };
+		88D57E7522533FF40075E08D /* CardScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanController.swift; sourceTree = "<group>"; };
+		88D57E7622533FF40075E08D /* CardScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanViewController.swift; sourceTree = "<group>"; };
+		88E5AED0223BEB4C00AE9F70 /* scn.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = scn.scnassets; sourceTree = "<group>"; };
+		88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
+		88F3EA73225B7F37002B3010 /* Logo Animation Horizontal Fast.apng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Logo Animation Horizontal Fast.apng"; sourceTree = "<group>"; };
+		8AB3A72B404ED78C0248C6E3 /* Pods-Bussines Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bussines Card.debug.xcconfig"; path = "Target Support Files/Pods-Bussines Card/Pods-Bussines Card.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +91,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32826C475017ACC72E8A2C1 /* Pods_Bussines_Card.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110D0918068CF3ADDD49338C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60ED93E33FEBC8AF16D6EEEF /* Pods_Bussines_Card.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24FE11BC7C100D8F14998A1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3A72B404ED78C0248C6E3 /* Pods-Bussines Card.debug.xcconfig */,
+				12AE82BDBD79B488F41A5D48 /* Pods-Bussines Card.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		88077993223F8A0F005363DD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				88ABF2442265E30D0019E9F6 /* PulleyLib */,
+				88D57E6822533D200075E08D /* For example */,
+				88173344224103E100A93009 /* AlphaVideoViewController */,
+				88077994223F8A23005363DD /* ARKitHelper.swift */,
+				880048042239240500E12E01 /* Extensions.swift */,
+				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
+				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
+				8821162F225CB8B200A112CC /* VideoView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8810A5362255F015002125F9 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8810A5372255F0B5002125F9 /* MenuViewController.swift */,
+				8810A53D2255FAD3002125F9 /* MenuViewController.storyboard */,
+			);
+			path = MenuViewController;
+			sourceTree = "<group>";
+		};
+		88173344224103E100A93009 /* AlphaVideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				881733462241042700A93009 /* AlphaFrameFilter.swift */,
+				881733452241042700A93009 /* AVPlayerView.swift */,
+				881733472241042700A93009 /* AlphaPlayerViewController.swift */,
+			);
+			path = AlphaVideoViewController;
+			sourceTree = "<group>";
+		};
+		881D2A972265C0B90033E8A7 /* RootPulleyController */ = {
+			isa = PBXGroup;
+			children = (
+				881D2A992265C0E70033E8A7 /* MainPulleyViewController.swift */,
+				881D2A982265C0E70033E8A7 /* CardScanSafariController.swift */,
+			);
+			path = RootPulleyController;
+			sourceTree = "<group>";
+		};
 		8842ED1B22368DBC00D3CC05 = {
 			isa = PBXGroup;
 			children = (
 				8842ED2622368DBC00D3CC05 /* Bussines Card */,
 				8842ED2522368DBC00D3CC05 /* Products */,
+				24FE11BC7C100D8F14998A1F /* Pods */,
+				110D0918068CF3ADDD49338C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,27 +180,95 @@
 			isa = PBXGroup;
 			children = (
 				8842ED2722368DBC00D3CC05 /* AppDelegate.swift */,
-				8842ED3D223696A400D3CC05 /* BussinesCard */,
-				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
-				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
-				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
-				8842ED2B22368DBC00D3CC05 /* Main.storyboard */,
-				8842ED442236983400D3CC05 /* Assets.xcassets */,
-				8842ED422236980800D3CC05 /* art.scnassets */,
-				8842ED4622369B2200D3CC05 /* Fonts */,
-				8842ED3022368DBC00D3CC05 /* LaunchScreen.storyboard */,
-				8842ED3322368DBC00D3CC05 /* Info.plist */,
+				88D57E6A22533FF40075E08D /* Controllers */,
+				88D57E6722533CD50075E08D /* ArKit */,
+				88D57E8022533FFF0075E08D /* Resources */,
+				88077993223F8A0F005363DD /* Helpers */,
 			);
 			path = "Bussines Card";
 			sourceTree = "<group>";
 		};
-		8842ED3D223696A400D3CC05 /* BussinesCard */ = {
+		884AD29922733B7900DF08D8 /* SafariViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8842ED3E223696B800D3CC05 /* BussinessCard.swift */,
-				8842ED40223696C800D3CC05 /* BusinessCardData.swift */,
+				881D2A9C2265C1E30033E8A7 /* SafariViewController.swift */,
+				884AD29A22733BA200DF08D8 /* SafariViewController.storyboard */,
 			);
-			path = BussinesCard;
+			path = SafariViewController;
+			sourceTree = "<group>";
+		};
+		88ABF2442265E30D0019E9F6 /* PulleyLib */ = {
+			isa = PBXGroup;
+			children = (
+				88ABF2452265E30D0019E9F6 /* PulleyViewController.swift */,
+				88ABF2462265E30D0019E9F6 /* UIViewController+PulleyViewController.swift */,
+				88ABF2472265E30D0019E9F6 /* PulleyPassthroughScrollView.swift */,
+				88ABF2482265E30D0019E9F6 /* UIView+constrainToParent.swift */,
+			);
+			path = PulleyLib;
+			sourceTree = "<group>";
+		};
+		88D57E6722533CD50075E08D /* ArKit */ = {
+			isa = PBXGroup;
+			children = (
+				88E5AED0223BEB4C00AE9F70 /* scn.scnassets */,
+			);
+			path = ArKit;
+			sourceTree = "<group>";
+		};
+		88D57E6822533D200075E08D /* For example */ = {
+			isa = PBXGroup;
+			children = (
+				8842ED2922368DBC00D3CC05 /* ARSceneViewController.swift */,
+				8842ED392236961200D3CC05 /* ARSceneViewController+Interactor.swift */,
+				8842ED3B2236962600D3CC05 /* ARSceneViewController+delegate.swift */,
+			);
+			path = "For example";
+			sourceTree = "<group>";
+		};
+		88D57E6A22533FF40075E08D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				881D2A972265C0B90033E8A7 /* RootPulleyController */,
+				884AD29922733B7900DF08D8 /* SafariViewController */,
+				8810A5362255F015002125F9 /* MenuViewController */,
+				88D57E7222533FF40075E08D /* CardScanViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		88D57E7222533FF40075E08D /* CardScanViewController */ = {
+			isa = PBXGroup;
+			children = (
+				88E5AED2223BEF6600AE9F70 /* ArKit Models */,
+				88D57E7622533FF40075E08D /* CardScanViewController.swift */,
+				88D57E7322533FF40075E08D /* CardScanArKitController.swift */,
+				88D57E7522533FF40075E08D /* CardScanController.swift */,
+				88D57E7422533FF40075E08D /* CardScanViewController.storyboard */,
+			);
+			path = CardScanViewController;
+			sourceTree = "<group>";
+		};
+		88D57E8022533FFF0075E08D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8814DD56225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png */,
+				8821162D225C96EE00A112CC /* Logo.mp4 */,
+				8810A53F225622D7002125F9 /* Logo Animation Fast.apng */,
+				8810A53B2255F7B2002125F9 /* Logo Animation Slow.apng */,
+				88F3EA73225B7F37002B3010 /* Logo Animation Horizontal Fast.apng */,
+				8842ED3322368DBC00D3CC05 /* Info.plist */,
+				8842ED442236983400D3CC05 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		88E5AED2223BEF6600AE9F70 /* ArKit Models */ = {
+			isa = PBXGroup;
+			children = (
+				88E5AED3223BEF9100AE9F70 /* BusinessCard.swift */,
+			);
+			path = "ArKit Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8842ED3622368DBC00D3CC05 /* Build configuration list for PBXNativeTarget "Bussines Card" */;
 			buildPhases = (
+				ACAE609C075C8479137787EF /* [CP] Check Pods Manifest.lock */,
 				8842ED2022368DBC00D3CC05 /* Sources */,
 				8842ED2122368DBC00D3CC05 /* Frameworks */,
 				8842ED2222368DBC00D3CC05 /* Resources */,
+				44752538C01CA0FB8CE81BEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,6 +305,7 @@
 				TargetAttributes = {
 					8842ED2322368DBC00D3CC05 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -148,15 +332,69 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8842ED4722369B2200D3CC05 /* Fonts in Resources */,
+				8810A53E2255FAD3002125F9 /* MenuViewController.storyboard in Resources */,
 				8842ED3222368DBC00D3CC05 /* LaunchScreen.storyboard in Resources */,
-				8842ED432236980800D3CC05 /* art.scnassets in Resources */,
+				8810A53C2255F7B2002125F9 /* Logo Animation Slow.apng in Resources */,
+				88D57E7D22533FF40075E08D /* CardScanViewController.storyboard in Resources */,
+				8821162E225C96EE00A112CC /* Logo.mp4 in Resources */,
+				8814DD57225F7C7F0067FE7E /* Screen Shot 2019-04-11 at 4.42.48 PM.png in Resources */,
 				8842ED452236983400D3CC05 /* Assets.xcassets in Resources */,
+				884AD29B22733BA200DF08D8 /* SafariViewController.storyboard in Resources */,
 				8842ED2D22368DBC00D3CC05 /* Main.storyboard in Resources */,
+				8810A540225622D8002125F9 /* Logo Animation Fast.apng in Resources */,
+				88E5AED1223BEB4C00AE9F70 /* scn.scnassets in Resources */,
+				88F3EA74225B7F37002B3010 /* Logo Animation Horizontal Fast.apng in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44752538C01CA0FB8CE81BEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bussines Card/Pods-Bussines Card-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APNGKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bussines Card/Pods-Bussines Card-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACAE609C075C8479137787EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bussines Card-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8842ED2022368DBC00D3CC05 /* Sources */ = {
@@ -164,11 +402,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				8842ED3A2236961200D3CC05 /* ARSceneViewController+Interactor.swift in Sources */,
-				8842ED41223696C800D3CC05 /* BusinessCardData.swift in Sources */,
-				8842ED3F223696B800D3CC05 /* BussinessCard.swift in Sources */,
+				88077995223F8A23005363DD /* ARKitHelper.swift in Sources */,
+				881D2A9A2265C0E70033E8A7 /* CardScanSafariController.swift in Sources */,
+				881733492241042700A93009 /* AlphaFrameFilter.swift in Sources */,
+				881D2A9B2265C0E70033E8A7 /* MainPulleyViewController.swift in Sources */,
+				8810A5382255F0B5002125F9 /* MenuViewController.swift in Sources */,
+				8817334A2241042700A93009 /* AlphaPlayerViewController.swift in Sources */,
+				88E5AED4223BEF9100AE9F70 /* BusinessCard.swift in Sources */,
+				88ABF24A2265E30D0019E9F6 /* UIViewController+PulleyViewController.swift in Sources */,
+				88ABF24B2265E30D0019E9F6 /* PulleyPassthroughScrollView.swift in Sources */,
+				88211630225CB8B200A112CC /* VideoView.swift in Sources */,
+				88D57E7E22533FF40075E08D /* CardScanController.swift in Sources */,
+				881D2A9D2265C1E30033E8A7 /* SafariViewController.swift in Sources */,
+				881733482241042700A93009 /* AVPlayerView.swift in Sources */,
+				88D57E7C22533FF40075E08D /* CardScanArKitController.swift in Sources */,
+				88ABF2492265E30D0019E9F6 /* PulleyViewController.swift in Sources */,
 				8842ED3C2236962600D3CC05 /* ARSceneViewController+delegate.swift in Sources */,
+				88ABF24C2265E30D0019E9F6 /* UIView+constrainToParent.swift in Sources */,
+				88D57E7F22533FF40075E08D /* CardScanViewController.swift in Sources */,
 				8842ED2A22368DBC00D3CC05 /* ARSceneViewController.swift in Sources */,
 				8842ED2822368DBC00D3CC05 /* AppDelegate.swift in Sources */,
+				880048052239240500E12E01 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,36 +566,42 @@
 		};
 		8842ED3722368DBC00D3CC05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AB3A72B404ED78C0248C6E3 /* Pods-Bussines Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X855T26XY3;
-				INFOPLIST_FILE = "Bussines Card/Info.plist";
+				DEVELOPMENT_TEAM = 3JC64BVWLY;
+				INFOPLIST_FILE = "$(SRCROOT)/Bussines Card/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "KK.Bussines-Card";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incode-group.ar-business-card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		8842ED3822368DBC00D3CC05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12AE82BDBD79B488F41A5D48 /* Pods-Bussines Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X855T26XY3;
-				INFOPLIST_FILE = "Bussines Card/Info.plist";
+				DEVELOPMENT_TEAM = 3JC64BVWLY;
+				INFOPLIST_FILE = "$(SRCROOT)/Bussines Card/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "KK.Bussines-Card";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incode-group.ar-business-card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

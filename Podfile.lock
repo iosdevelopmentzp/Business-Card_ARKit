@@ -1,0 +1,16 @@
+PODS:
+  - APNGKit (1.1.0)
+
+DEPENDENCIES:
+  - APNGKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - APNGKit
+
+SPEC CHECKSUMS:
+  APNGKit: 8fcf50c4004d6d01473707412d162e90d1fa599a
+
+PODFILE CHECKSUM: 6e9ac6e626e6ec583a1fb881bd0ca9267fa10c23
+
+COCOAPODS: 1.6.1
